@@ -90,9 +90,9 @@ the API.
 - [ ] Style search & tag components
 - [ ] Seed tags with seed data
 
-### Phase 5: Review (1 day, W2 F 6pm)
+### Phase 5: Reviews (1 day, W2 F 6pm)
 
-**objective:** Allow users to write review for bookings.
+**objective:** Allow users to write reviews for bookings.
 
 - [ ] Adding reviews to bookings
 - [ ] Permitting reviews only when user is logged in and booking is completed
