@@ -5,53 +5,41 @@
 
 **HomeContainer**
  - Home
+  - Navbar
+  - Search bar
+
+**SpotsContainer**
  - Navbar
+  - Spots
+  - Search bar
 
-**NotesContainer**
- - NotesHeader
-  * NoteIndex
+**SpotIndexContainer**
+ - Navbar
+  - Spot header
+  - Request booking
+  - Reviews
 
-**NotebookContainer**
- - NotebookHeader
-  + NoteIndex
+**NewSpotContainer**
+ - Navbar
+  - Spot title
+  - Spot details
+  - Spot price form
 
-**SearchResultsContainer**
- - Search
- - NoteIndex
+**BookingContainer**
+ - Booking options
+  - Price break-down
 
-**TagContainer**
- - NotebookHeader
-  + NoteIndex
+**ReviewsContainer**
+ - Reviewer
+ - Body
+   - Rating
+   - Text
 
-**NoteIndex**
- - NoteIndexItem
-  + NoteDetail
-   * NoteTools
-    - NotebookSearch
-    - Tags
-     + Tag
-    * Note
-
-**NewNoteContainer**
- - NewNote
-  - RTETools
-  - NewNoteButton
-
-**Search**
-
-**NewNotebook**
- - NewNotebook
-
-**NewTag**
- - NewTag
-
-**NotebookSearch**
- + AutoSearch
- * AutoSearchResults
-
-**TagsSearch**
- + AutoSearch
- * AutoSearchResults
+**NewReviewContainer**
+ - New Review
+  - Booking info
+  - Ratings
+  - Textarea
 
 ## Routes
 
@@ -60,13 +48,9 @@
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
-| "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
+| "/home/spots" | "SpotsContainer" |
+| "/home/spots/:spotId/new-booking" | "NewBookingContainer" |
+| "/home/spots/:spotId/booking/:bookingId" | "BookingContainer" |
 | "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
-| "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
-| "/new-tag" | "NewTag" |
-| "/tag-search" | "TagSearch" |
-| "/notebook-search" | "NotebookSearch" |
+| "/home/spots/:spotId/bookings/:bookingId/new-review" | "NewReviewContainer" |
+| "/home/spots/:spotId" | "SpotIndexContainer" |
