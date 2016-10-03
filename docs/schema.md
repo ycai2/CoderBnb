@@ -4,6 +4,8 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+title       | string    | not null
+description | string    | not null
 type        | string    | not null
 price       | integer   | not null
 lat         | integer   | not null
@@ -40,8 +42,8 @@ center_lng      | integer   | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-start_date      | integer   | not null
-end_date        | integer   | not null
+start_date      | date      | not null
+end_date        | date      | not null
 guest_count     | integer   | not null, minimum 1
 user_id         | integer   | not null
 spot_id         | integer   | not null
