@@ -21,5 +21,9 @@
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
     "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "eslint-plugin-react": "^6.3.0"
   }
 }

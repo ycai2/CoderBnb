@@ -6,7 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
-    if ("currentUser" in store.getState().session) {
+    if (store.getState().session.currentUser !== undefined) {
       replace("/");
     }
   };

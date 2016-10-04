@@ -1,0 +1,4 @@
+{
+    "preset": "airbnb",
+    "parser": "babel-eslint"
+}

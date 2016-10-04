@@ -5,7 +5,7 @@ function Greeting({ currentUser, logout }) {
   if (currentUser) {
     return (
       <div>
-        <h1>Hello, {currentUser.username}</h1>
+        <h1>Hello, {currentUser.firstName} {currentUser.lastName}</h1>
         <button onClick={logout}>Logout</button>
       </div>
     );
