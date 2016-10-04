@@ -5,19 +5,19 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-description | string    | not null
+description | text      | not null
 type        | string    | not null
 price       | integer   | not null
-lat         | integer   | not null
-lng         | integer   | not null
+lat         | float     | not null
+lng         | float     | not null
 user_id     | integer   | not null, foreign key (references users), indexed
-location_id | integer   | not null, foreign key (references locations), indexed
 
 ## users
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 email           | string    | not null, indexed, unique
+name            | string    | not null
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
@@ -25,18 +25,13 @@ session_token   | string    | not null, indexed, unique
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-rating          | integer   | not null
-description     | text      |
+overall_rating  | integer   | not null
+cleanness       | integer   | not null
+quietness       | integer   | not null
+communication   | integer   | not null
+description     | text      | 
 user_id         | integer   | not null, foreign key (references users), indexed
-pet_id          | integer   | not null, foreign key (references pets), indexed
-
-## locations
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-name            | string    | not null
-center_lat      | integer   | not null
-center_lng      | integer   | not null
+booking_id      | integer   | not null, foreign key (references booking), indexed
 
 ## bookings
 column name     | data type | details

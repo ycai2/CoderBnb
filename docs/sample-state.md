@@ -36,7 +36,7 @@
       start_date: 08-03-2016,
       end_date: 08-27-2016,
       user_id: 1,
-      spot_id: 1
+      spot_id: 1ss
     }
   }
 }
