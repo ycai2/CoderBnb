@@ -32,7 +32,6 @@ class SessionForm extends React.Component {
 
   render() {
     const otherFormType = (this.props.formType === 'login') ? 'signup' : 'login';
-
     return (
       <div>
         <h1>{this.props.formType}</h1>

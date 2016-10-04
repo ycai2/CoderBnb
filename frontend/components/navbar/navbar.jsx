@@ -9,30 +9,43 @@ class Navbar extends React.Component {
 
   userOptions() {
     return (
-      <div>
-        <h1>Hello, {this.props.currentUser.firstName} {this.props.currentUser.lastName}</h1>
-        <button onClick={logout}>Log Out</button>
-      </div>
+      <ul className="navbar-list">
+        <li>Trips</li>
+        <li>Help</li>
+        <li><Link to='/'>{this.props.currentUser.firstName}</Link></li>
+        <li>
+          <ul>
+            <li>Edit Profile</li>
+            <li onClick={logout}>Log Out</li>
+          </ul>
+        </li>
+      </ul>
     );
   }
 
   guestOptions() {
     return (
-      <div>
-        <h1>Please log in</h1>
-        <Link to='/signup'>Sign Up</Link>
-          &nbsp;|&nbsp;
-        <Link to='/login'>Log In</Link>
-      </div>
+      <ul className="navbar-list">
+        <li><Link to='/'>Help</Link></li>
+        <li><Link to='/signup'>Sign Up</Link></li>
+        <li><Link to='/login'>Log In</Link></li>
+      </ul>
     )
   }
 
   render() {
-    if (this.props.currentUser) {
-      return this.userOptions();
-    } else {
-      return this.guestOptions();
-    }
+    let options = (this.props.currentUser) ? this.userOptions() : this.guestOptions();
+    return (
+      <nav className="navbar group">
+        <h1 className="navbar-logo">
+          <a href='/'>
+            <i className="fa fa-file-code-o fa-3"></i>&nbsp;coderbnb
+          </a>
+        </h1>
+        {options}
+      </nav>
+    );
+
   }
 }
 

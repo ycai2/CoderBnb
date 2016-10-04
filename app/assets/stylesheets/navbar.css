@@ -1,0 +1,35 @@
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #dce0e0;
+}
+
+.navbar-logo {
+  color: #ff5a5f;
+  float: left;
+  border-right: 1px solid #dce0e0;
+}
+
+.navbar-logo a {
+  display: block;
+  font-size: 20px;
+  padding: 10px 19px;
+  font-weight: bold;
+}
+
+.navbar-logo i {
+  font-size: 36px;
+}
+
+.navbar-list {
+  float: right;
+}
+
+.navbar-list li {
+  float: left;
+  border-left: 1px solid #dce0e0;
+}
+
+.navbar-list a {
+  padding: 10px 19px;
+  display: block;
+}
