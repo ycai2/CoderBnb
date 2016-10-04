@@ -1,6 +1,11 @@
 .navbar {
   background: #fff;
   border-bottom: 1px solid #dce0e0;
+  line-height: 36px;
+}
+
+.navbar a:hover {
+  background: #f5f5f5;
 }
 
 .navbar-logo {
@@ -22,14 +27,48 @@
 
 .navbar-list {
   float: right;
+  display: block;
 }
 
-.navbar-list li {
+.navbar-list > li{
   float: left;
   border-left: 1px solid #dce0e0;
+  font-size: 14px;
 }
 
-.navbar-list a {
+
+.navbar-list a, .logout {
   padding: 10px 19px;
+  line-height: 43px;
   display: block;
+}
+
+.navbar > i {
+  font-size: 36px;
+  padding: 10px 19px;
+  color: #dce0e0;
+}
+
+.user-label {
+
+}
+
+.user-label:hover .user-menu {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.user-menu {
+  display: none;
+  position: absolute;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+.logout:hover {
+
 }

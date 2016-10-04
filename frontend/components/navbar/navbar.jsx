@@ -9,14 +9,14 @@ class Navbar extends React.Component {
 
   userOptions() {
     return (
-      <ul className="navbar-list">
-        <li>Trips</li>
-        <li>Help</li>
-        <li><Link to='/'>{this.props.currentUser.firstName}</Link></li>
-        <li>
-          <ul>
-            <li>Edit Profile</li>
-            <li onClick={logout}>Log Out</li>
+      <ul className="navbar-list group">
+        <li><Link to='/'>Trips</Link></li>
+        <li><Link to='/'>Help</Link></li>
+        <li className="user-label">
+          <Link to='/'>{this.props.currentUser.firstName}</Link>
+          <ul className="user-menu">
+            <li><Link to='/'>Edit Profile</Link></li>
+            <li onClick={this.props.logout} className="logout">Log Out</li>
           </ul>
         </li>
       </ul>
@@ -25,7 +25,7 @@ class Navbar extends React.Component {
 
   guestOptions() {
     return (
-      <ul className="navbar-list">
+      <ul className="navbar-list group">
         <li><Link to='/'>Help</Link></li>
         <li><Link to='/signup'>Sign Up</Link></li>
         <li><Link to='/login'>Log In</Link></li>
@@ -42,6 +42,7 @@ class Navbar extends React.Component {
             <i className="fa fa-file-code-o fa-3"></i>&nbsp;coderbnb
           </a>
         </h1>
+        <i className="fa fa-search fa-3"></i>
         {options}
       </nav>
     );
