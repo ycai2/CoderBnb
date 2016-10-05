@@ -8,7 +8,10 @@ import {
 } from '../actions/session_actions';
 
 export default ({ getState, dispatch }) => next => action => {
-  const successCallback = user => dispatch(receiveCurrentUser(user));
+  const successCallback = (user) => {
+    action.closeModal();
+    dispatch(receiveCurrentUser(user));
+  };
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
 
   switch(action.type) {

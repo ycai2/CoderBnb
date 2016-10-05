@@ -9,7 +9,7 @@ const mapStateToProps = ({ session }) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    login: user => dispatch(login(user)),
+    login: (user, closeModal) => dispatch(login(user, closeModal)),
   };
 };
 

@@ -39,8 +39,8 @@
 
 
 .navbar-list > li, .logout {
-  padding: 10px 19px;
-  line-height: 43px;
+  padding: 0 19px;
+  line-height: 63px;
   display: block;
 }
 
@@ -51,6 +51,7 @@
 }
 
 .user-label {
+
   position: relative;
 }
 

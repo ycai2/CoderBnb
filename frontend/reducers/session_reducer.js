@@ -11,11 +11,12 @@ const defaultState = {
 
 const SessionReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case RECEIVE_CURRENT_USER:
+    case RECEIVE_CURRENT_USER: {
       return {
         currentUser: action.user,
         errors: []
       };
+    }
 
     case RECEIVE_ERRORS:
       return {

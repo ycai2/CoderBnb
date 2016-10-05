@@ -83,18 +83,19 @@ class Navbar extends React.Component {
           <i className="fa fa-search fa-3"></i>
           {options}
         </nav>
+
         <Modal
           isOpen={this.state.signupIsOpen}
           onRequestClose={this.closeModal}
         >
-          <SignupFormContainer />
+          <SignupFormContainer closeModal={this.closeModal} />
         </Modal>
 
         <Modal
           isOpen={this.state.loginIsOpen}
           onRequestClose={this.closeModal}
         >
-          <LoginFormContainer />
+          <LoginFormContainer closeModal={this.closeModal} />
         </Modal>
       </div>
     );
