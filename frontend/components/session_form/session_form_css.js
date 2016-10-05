@@ -19,6 +19,8 @@ const modalStyle = {
     padding                    : '32px',
     borderRadius               : '2px',
     margin                     : 'auto',
+    boxSizing                  : 'border-box',
+    display                    : 'table'
   }
 }
 

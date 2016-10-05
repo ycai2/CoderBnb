@@ -1,0 +1,54 @@
+.control-group {
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 1px;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+i.fa-user-secret {
+  padding-right: 3px;
+}
+
+#signup-form input {
+  font-size: 16px;
+  height: 40px;
+  padding: 10px 35px 10px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #484848;
+  font-weight: lighter;
+  border-radius: 2px;
+}
+
+#singup-form input::-webkit-input-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+#signup-form i {
+  color: rgb(170, 170, 170);
+  font-size: 22px;
+  position: absolute;
+  right: 10px;
+  top: 10px
+}
+
+#signup-form button {
+  font-size: 16px;
+  height: 64px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  font-weight: lighter;
+  border: 1px solid #ff5a5f;
+  border-radius: 2px;
+  background-color: #ff5a5f;
+  margin-bottom: 6px;
+}
+
+#singup-form button:hover {
+  cursor: pointer;
+  border-color: #ff7e82;
+  background-color: #ff7e82;
+}

@@ -8,6 +8,10 @@ class LoginForm extends React.Component {
       email: "",
       password: "",
     };
+    this.guest = {
+      email: "guest@email.com",
+      password: "starwar",
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -24,6 +28,11 @@ class LoginForm extends React.Component {
     this.props.login(user, this.props.closeModal);
   }
 
+  guestLogin(e) {
+    e.preventDefault();
+    this.props.login(this.guest, this.props.closeModal);
+  }
+
   update(field) {
     return (e) => this.setState({
 			[field]: e.currentTarget.value
@@ -33,7 +42,6 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>Login</h1>
         <ul>
           {
             this.props.errors.map((error, idx) => (
@@ -42,19 +50,34 @@ class LoginForm extends React.Component {
           }
         </ul>
 
-        <form>
-          <label>
-            Email
-            <input type="text" value={this.state.email} onChange={this.update('email')}/>
-          </label>
+        <form id="login-form">
+          <div className="control-group">
+            <input
+              id="login-email"
+              type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              placeholder="Email Address"
+            />
+            <i className="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
 
-          <label>
-            Password
-            <input type="password" value={this.state.password} onChange={this.update('password')}/>
-          </label>
-
-          <button onClick={this.handleSubmit}>Login</button>
+          <br />
+          <div className="control-group">
+            <input
+              id="login-password"
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"
+            />
+            <i className="fa fa-lock" aria-hidden="true"></i>
+          </div>
+          <br />
+          <button onClick={this.handleSubmit}>Log in</button>
+          <button onClick={this.guestLogin}>Guest</button>
         </form>
+
       </div>
     );
 
