@@ -8,6 +8,10 @@ class LoginForm extends React.Component {
       email: "",
       password: "",
     };
+    this.guest = {
+      email: "guest@email.com",
+      password: "starwar",
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,6 +26,11 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.login(user, this.props.closeModal);
+  }
+
+  guestLogin(e) {
+    e.preventDefault();
+    this.props.login(this.guest, this.props.closeModal);
   }
 
   update(field) {
@@ -50,9 +59,10 @@ class LoginForm extends React.Component {
               onChange={this.update('email')}
               placeholder="Email Address"
             />
-            <br />
+            <i className="fa fa-envelope-o" aria-hidden="true"></i>
           </div>
 
+          <br />
           <div className="control-group">
             <input
               id="login-password"
@@ -61,10 +71,13 @@ class LoginForm extends React.Component {
               onChange={this.update('password')}
               placeholder="Password"
             />
-            <br />
+            <i className="fa fa-lock" aria-hidden="true"></i>
           </div>
+          <br />
           <button onClick={this.handleSubmit}>Log in</button>
+          <button onClick={this.guestLogin}>Guest</button>
         </form>
+
       </div>
     );
 

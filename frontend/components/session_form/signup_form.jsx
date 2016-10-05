@@ -35,7 +35,6 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>Sign Up</h1>
         <ul>
           {
             this.props.errors.map((error, idx) => (

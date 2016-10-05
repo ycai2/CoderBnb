@@ -20,6 +20,7 @@ const modalStyle = {
     borderRadius               : '2px',
     margin                     : 'auto',
     boxSizing                  : 'border-box',
+    display                    : 'table'
   }
 }
 
