@@ -23,7 +23,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.login(user);
+    this.props.signup(user);
   }
 
   update(field) {
@@ -46,16 +46,6 @@ class SignupForm extends React.Component {
 
         <form>
           <label>
-            Email
-            <input type="text" value={this.state.email} onChange={this.update('email')}/>
-          </label>
-
-          <label>
-            Password
-            <input type="password" value={this.state.password} onChange={this.update('password')}/>
-          </label>
-
-          <label>
             First Name
             <input type="text" value={this.state.firstName} onChange={this.update('firstName')}/>
           </label>
@@ -65,7 +55,18 @@ class SignupForm extends React.Component {
             <input type="text" value={this.state.lastName} onChange={this.update('lastNane')}/>
           </label>
 
+          <label>
+            Email
+            <input type="text" value={this.state.email} onChange={this.update('email')}/>
+          </label>
+
+          <label>
+            Password
+            <input type="password" value={this.state.password} onChange={this.update('password')}/>
+          </label>
+
           <button onClick={this.handleSubmit}>Submit</button>
+          <button onClick={this.closeModal}>Cancel</button>
         </form>
       </div>
     );

@@ -14,6 +14,7 @@ class Navbar extends React.Component {
     this.userOptions = this.userOptions.bind(this);
     this.openSignup = this.openSignup.bind(this);
     this.openLogin = this.openLogin.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentWillMount() {
