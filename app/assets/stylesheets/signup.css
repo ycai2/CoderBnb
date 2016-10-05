@@ -5,33 +5,34 @@
   position: relative;
 }
 
-#login-form input {
+i.fa-user-secret {
+  padding-right: 3px;
+}
+
+#signup-form input {
   font-size: 16px;
-  height: 64px;
+  height: 40px;
   padding: 10px 35px 10px 10px;
   width: 100%;
   box-sizing: border-box;
   color: #484848;
   font-weight: lighter;
+  border-radius: 2px;
 }
 
-#login-form input::-webkit-input-placeholder {
+#singup-form input::-webkit-input-placeholder {
   color: rgb(170, 170, 170);
 }
 
-#login-form i {
+#signup-form i {
   color: rgb(170, 170, 170);
   font-size: 22px;
   position: absolute;
   right: 10px;
-  top: 20px
+  top: 10px
 }
 
-i.fa-lock {
-  padding-right: 4px;
-}
-
-#login-form button {
+#signup-form button {
   font-size: 16px;
   height: 64px;
   padding: 10px;
@@ -46,7 +47,7 @@ i.fa-lock {
   margin-bottom: 6px;
 }
 
-#login-form button:hover {
+#singup-form button:hover {
   cursor: pointer;
   border-color: #ff7e82;
   background-color: #ff7e82;

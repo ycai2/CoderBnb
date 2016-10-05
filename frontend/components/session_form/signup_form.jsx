@@ -7,8 +7,8 @@ class SignupForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,6 +23,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
+    console.log(user);
     this.props.signup(user, this.props.closeModal);
   }
 
@@ -43,29 +44,48 @@ class SignupForm extends React.Component {
           }
         </ul>
 
-        <form>
-          <label>
-            First Name
-            <input type="text" value={this.state.firstName} onChange={this.update('firstName')}/>
-          </label>
+        <form id="signup-form">
+          <div className="control-group">
+            <input
+              type="text"
+              value={this.state.firstName}
+              onChange={this.update('first_name')}
+              placeholder="First name"
+            />
+            <i className="fa fa-user-secret" aria-hidden="true"></i>
+          </div>
 
-          <label>
-            Last Name
-            <input type="text" value={this.state.lastName} onChange={this.update('lastNane')}/>
-          </label>
+          <div className="control-group">
+            <input
+              type="text"
+              value={this.state.lastName}
+              onChange={this.update('last_name')}
+              placeholder="Last name"
+            />
+            <i className="fa fa-user-secret" aria-hidden="true"></i>
+          </div>
 
-          <label>
-            Email
-            <input type="text" value={this.state.email} onChange={this.update('email')}/>
-          </label>
+          <div className="control-group">
+            <input
+              type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              placeholder="Email address"
+            />
+            <i className="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
 
-          <label>
-            Password
-            <input type="password" value={this.state.password} onChange={this.update('password')}/>
-          </label>
+          <div className="control-group">
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"
+            />
+            <i className="fa fa-lock" aria-hidden="true"></i>
+          </div>
 
-          <button onClick={this.handleSubmit}>Submit</button>
-          <button onClick={this.closeModal}>Cancel</button>
+          <button onClick={this.handleSubmit}>Sign up</button>
         </form>
       </div>
     );
