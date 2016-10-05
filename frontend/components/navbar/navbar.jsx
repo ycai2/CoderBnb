@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { Link } from 'react-router';
 import SignupFormContainer from '../session_form/signup_form_container';
 import LoginFormContainer from '../session_form/login_form_container';
+import modalStyle from '../session_form/session_form_css';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -87,6 +88,7 @@ class Navbar extends React.Component {
         <Modal
           isOpen={this.state.signupIsOpen}
           onRequestClose={this.closeModal}
+          style={modalStyle}
         >
           <SignupFormContainer closeModal={this.closeModal} />
         </Modal>
@@ -94,6 +96,7 @@ class Navbar extends React.Component {
         <Modal
           isOpen={this.state.loginIsOpen}
           onRequestClose={this.closeModal}
+          style={modalStyle}
         >
           <LoginFormContainer closeModal={this.closeModal} />
         </Modal>
