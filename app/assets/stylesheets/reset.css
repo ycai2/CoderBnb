@@ -19,10 +19,10 @@ button, article, footer, small {
 
 body {
   box-sizing: content-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   background: #eee;
-  color: #000;
+  color: #484848;
 }
 
 ul {

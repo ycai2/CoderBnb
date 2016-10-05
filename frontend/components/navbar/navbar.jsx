@@ -16,6 +16,7 @@ class Navbar extends React.Component {
           <Link to='/'>{this.props.currentUser.firstName}</Link>
           <ul className="user-menu">
             <li><Link to='/'>Edit Profile</Link></li>
+            <hr/>
             <li onClick={this.props.logout} className="logout">Log Out</li>
           </ul>
         </li>

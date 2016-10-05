@@ -18,10 +18,12 @@ export const signup = (user) => ({
   user,
 });
 
-export const receiveCurrentUser = (currentUser) => ({
-  type: RECEIVE_CURRENT_USER,
-  user: currentUser,
-});
+export const receiveCurrentUser = (currentUser) => {
+  return ({
+    type: RECEIVE_CURRENT_USER,
+    user: currentUser,
+  });
+};
 
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
