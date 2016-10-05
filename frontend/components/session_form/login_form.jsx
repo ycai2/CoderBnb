@@ -14,6 +14,8 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
+    this.switchModal = this.switchModal.bind(this);
   }
 
   componentDidUpdate() {
@@ -39,9 +41,15 @@ class LoginForm extends React.Component {
 		});
   }
 
+  switchModal(e) {
+    e.preventDefault();
+    this.props.closeModal();
+    this.props.openSignup();
+  }
+
   render() {
     return (
-      <div>
+      <div className="form-control">
         <ul>
           {
             this.props.errors.map((error, idx) => (
@@ -78,6 +86,11 @@ class LoginForm extends React.Component {
           <button onClick={this.guestLogin}>Guest</button>
         </form>
 
+        <hr />
+        <div className="footer group">
+          <div>Want to be an allnigh-co-ter?</div>
+          <button onClick={this.switchModal}>Sign up</button>
+        </div>
       </div>
     );
 

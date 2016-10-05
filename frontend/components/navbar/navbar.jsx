@@ -90,7 +90,7 @@ class Navbar extends React.Component {
           onRequestClose={this.closeModal}
           style={modalStyle}
         >
-          <SignupFormContainer closeModal={this.closeModal} />
+          <SignupFormContainer closeModal={this.closeModal} openLogin={this.openLogin} />
         </Modal>
 
         <Modal
@@ -98,7 +98,7 @@ class Navbar extends React.Component {
           onRequestClose={this.closeModal}
           style={modalStyle}
         >
-          <LoginFormContainer closeModal={this.closeModal} />
+          <LoginFormContainer closeModal={this.closeModal} openSignup={this.openSignup} />
         </Modal>
       </div>
     );
