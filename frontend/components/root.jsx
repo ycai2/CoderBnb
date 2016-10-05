@@ -4,12 +4,6 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 
 const Root = ({ store }) => {
-  const _redirectIfLoggedIn = (nextState, replace) => {
-    if (!!store.getState().session.currentUser) {
-      replace("/");
-    }
-  };
-
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
