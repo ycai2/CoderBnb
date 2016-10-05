@@ -51,3 +51,30 @@ i.fa-lock {
   border-color: #ff7e82;
   background-color: #ff7e82;
 }
+
+#login-form {
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.form-control hr {
+  width: initial;
+}
+
+.form-control .footer {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.form-control .footer div {
+  float: left;
+  line-height: 34px;
+}
+
+.form-control .footer button {
+  float: right;
+  border: 1px solid #ff5a5f;
+  border-radius: 2px;
+  padding: 7px 21px;
+  cursor: pointer;
+}
