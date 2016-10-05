@@ -4,8 +4,7 @@
   line-height: 36px;
 }
 
-.navbar-logo:hover, .navbar-list > li:hover {
-  cursor: pointer;
+.navbar-logo:hover, .navbar-list > li > a:hover {
   background: #f5f5f5;
 }
 
@@ -38,7 +37,7 @@
 }
 
 
-.navbar-list > li, .logout {
+.navbar-list a, .logout {
   padding: 10px 19px;
   line-height: 43px;
   display: block;
