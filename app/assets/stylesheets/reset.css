@@ -20,7 +20,8 @@ button, article, footer, small {
 body {
   box-sizing: content-box;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  -webkit-font-smoothing: autialiased;
   color: #484848;
 }
 

@@ -1,0 +1,28 @@
+.control-group {
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 1px;
+  margin-bottom: 6px;
+}
+
+#login-form input {
+  font-size: 16px;
+  height: 64px;
+  padding: 10px 35px 10px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: rgb(170, 170, 170);
+  font-weight: lighter;
+}
+
+#login-form button {
+  font-size: 16px;
+  height: 64px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  font-weight: lighter;
+  border: 1px solid #ff5a5f;
+  border-radius: 2px;
+  background-color: #ff5a5f;
+}

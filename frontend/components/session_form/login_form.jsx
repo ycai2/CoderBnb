@@ -33,7 +33,6 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>Login</h1>
         <ul>
           {
             this.props.errors.map((error, idx) => (
@@ -42,18 +41,29 @@ class LoginForm extends React.Component {
           }
         </ul>
 
-        <form>
-          <label>
-            Email
-            <input type="text" value={this.state.email} onChange={this.update('email')}/>
-          </label>
+        <form id="login-form">
+          <div className="control-group">
+            <input
+              id="login-email"
+              type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              placeholder="Email Address"
+            />
+            <br />
+          </div>
 
-          <label>
-            Password
-            <input type="password" value={this.state.password} onChange={this.update('password')}/>
-          </label>
-
-          <button onClick={this.handleSubmit}>Login</button>
+          <div className="control-group">
+            <input
+              id="login-password"
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"
+            />
+            <br />
+          </div>
+          <button onClick={this.handleSubmit}>Log in</button>
         </form>
       </div>
     );
