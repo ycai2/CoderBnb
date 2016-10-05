@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
-class SessionForm extends React.Component {
+class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm(user);
+    this.props.login(user);
   }
 
   update(field) {
@@ -31,11 +31,9 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const otherFormType = (this.props.formType === 'login') ? 'signup' : 'login';
     return (
       <div>
-        <h1>{this.props.formType}</h1>
-        <Link to={`/${otherFormType}`}>{otherFormType}</Link>
+        <h1>Login</h1>
         <ul>
           {
             this.props.errors.map((error, idx) => (
@@ -46,7 +44,7 @@ class SessionForm extends React.Component {
 
         <form>
           <label>
-            email
+            Email
             <input type="text" value={this.state.email} onChange={this.update('email')}/>
           </label>
 
@@ -55,7 +53,7 @@ class SessionForm extends React.Component {
             <input type="password" value={this.state.password} onChange={this.update('password')}/>
           </label>
 
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button onClick={this.handleSubmit}>Login</button>
         </form>
       </div>
     );
@@ -63,4 +61,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default LoginForm;

@@ -70,7 +70,7 @@
   background: #fff;
 }
 
-.user-menu a, .logout {
+.user-menu li, .logout {
   line-height: 18px;
   padding: 20px;
 }

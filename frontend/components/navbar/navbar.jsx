@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router';
 import SignupFormContainer from '../session_form/signup_form_container';
+import LoginFormContainer from '../session_form/login_form_container';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -32,14 +33,14 @@ class Navbar extends React.Component {
     this.setState({
       signupIsOpen: false,
       loginIsOpen: true,
-    })
+    });
   }
 
   closeModal() {
     this.setState({
       signupIsOpen: false,
       loginIsOpen: false
-    })
+    });
   }
 
   userOptions() {
@@ -87,6 +88,13 @@ class Navbar extends React.Component {
           onRequestClose={this.closeModal}
         >
           <SignupFormContainer />
+        </Modal>
+
+        <Modal
+          isOpen={this.state.loginIsOpen}
+          onRequestClose={this.closeModal}
+        >
+          <LoginFormContainer />
         </Modal>
       </div>
     );
