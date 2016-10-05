@@ -78,3 +78,8 @@ i.fa-lock {
   padding: 7px 21px;
   cursor: pointer;
 }
+
+.form-control ul {
+  font-weight: 300;
+  color: #484848;
+}
