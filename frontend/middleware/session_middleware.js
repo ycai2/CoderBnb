@@ -4,7 +4,7 @@ import {
   LOGOUT,
   SIGNUP,
   receiveCurrentUser,
-  receiveErrors
+  receiveErrors,
 } from '../actions/session_actions';
 
 export default ({ getState, dispatch }) => next => action => {

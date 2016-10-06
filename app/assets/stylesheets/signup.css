@@ -52,3 +52,8 @@ i.fa-user-secret {
   border-color: #ff7e82;
   background-color: #ff7e82;
 }
+
+#signup-form {
+  padding-bottom: 20px;
+  overflow: hidden;
+}

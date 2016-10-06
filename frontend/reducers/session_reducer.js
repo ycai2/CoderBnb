@@ -1,7 +1,8 @@
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_ERRORS,
-  LOGOUT
+  LOGOUT,
+  CLEAR_ERRORS,
 } from '../actions/session_actions';
 
 const defaultState = {
@@ -29,6 +30,12 @@ const SessionReducer = (state = defaultState, action) => {
         currentUser: null,
         errors: []
       };
+
+    case CLEAR_ERRORS:
+      return {
+        currentUser: state.currentUser,
+        errors: []
+      }
 
     default:
       return state;

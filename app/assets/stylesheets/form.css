@@ -1,0 +1,28 @@
+.form-control hr {
+  width: initial;
+}
+
+.form-control .footer {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.form-control .footer div {
+  float: left;
+  line-height: 34px;
+}
+
+.form-control .footer button {
+  float: right;
+  border: 1px solid #ff5a5f;
+  border-radius: 2px;
+  padding: 7px 21px;
+  cursor: pointer;
+}
+
+.form-control ul {
+  font-weight: 300;
+  color: #484848;
+  line-height: 20px;
+  padding-bottom: 10px;
+}
