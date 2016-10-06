@@ -5,7 +5,7 @@ export const requestSpots = () => ({
   type: REQUEST_SPOTS
 });
 
-export const receiveSpots = (spots) => ({
+export const receiveSpots = (data) => ({
   type: RECEIVE_SPOTS,
-  spots
+  spots: data.spots
 });
