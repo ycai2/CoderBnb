@@ -5,7 +5,7 @@
 #  id                 :integer          not null, primary key
 #  title              :string           not null
 #  description        :text             not null
-#  type               :string           not null
+#  room_type          :string           not null
 #  price              :integer          not null
 #  lat                :float            not null
 #  lng                :float            not null
@@ -20,6 +20,10 @@
 
 class Spot < ActiveRecord::Base
   validates :title, :description, :room_type, :price, :lat, :lng, :user_id, presence: true
+  validates :room_type, inclusion: {
+    in: %w(basement lab penthouse),
+    message: "%{value} is not a valid room type for coders"
+  }
 
   has_attached_file :image, default_url: "default.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
