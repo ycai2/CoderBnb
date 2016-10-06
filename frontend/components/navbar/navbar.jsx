@@ -24,6 +24,7 @@ class Navbar extends React.Component {
   }
 
   openSignup() {
+    this.props.clearErrors();
     this.setState({
       signupIsOpen: true,
       loginIsOpen: false,
@@ -31,6 +32,7 @@ class Navbar extends React.Component {
   }
 
   openLogin() {
+    this.props.clearErrors();
     this.setState({
       signupIsOpen: false,
       loginIsOpen: true,
@@ -38,6 +40,7 @@ class Navbar extends React.Component {
   }
 
   closeModal() {
+    this.props.clearErrors();
     this.setState({
       signupIsOpen: false,
       loginIsOpen: false
