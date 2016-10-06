@@ -3,7 +3,7 @@ class CreateSpots < ActiveRecord::Migration
     create_table :spots do |t|
       t.string :title, null: false
       t.text :description, null: false
-      t.string :type, null: false
+      t.string :room_type, null: false
       t.integer :price, null: false
       t.float :lat, null: false
       t.float :lng, null: false

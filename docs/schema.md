@@ -10,6 +10,7 @@ type        | string    | not null
 price       | integer   | not null
 lat         | float     | not null
 lng         | float     | not null
+img_url     | attachment| not null
 user_id     | integer   | not null, foreign key (references users), indexed
 
 ## users
@@ -29,7 +30,7 @@ overall_rating  | integer   | not null
 cleanness       | integer   | not null
 quietness       | integer   | not null
 communication   | integer   | not null
-description     | text      | 
+description     | text      |
 user_id         | integer   | not null, foreign key (references users), indexed
 booking_id      | integer   | not null, foreign key (references booking), indexed
 
