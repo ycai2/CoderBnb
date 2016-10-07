@@ -3,7 +3,10 @@ import Rheostat from 'rheostat';
 
 const Price = (props) => {
   return (
-    <h1>Price</h1>
+    <div className="price group">
+      <span className="title price-title">Price range</span>
+      <Rheostat class="price-range-picker" min={1} max={100} values={[1, 100]} />
+    </div>
   );
 };
 

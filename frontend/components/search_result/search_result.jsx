@@ -1,6 +1,7 @@
 import React from 'react';
 import { DateRangePicker } from 'react-dates';
 import RoomType from './filters/room_type';
+import Price from './filters/price';
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class SearchResult extends React.Component {
           <RoomType />
           <hr />
           <div className="price-range">
-          
+            <Price />
           </div>
         </div>
         <ul className="spot-list group">
