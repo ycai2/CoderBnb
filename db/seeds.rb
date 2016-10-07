@@ -18,6 +18,8 @@ spot1 = Spot.create!(
   description: Faker::Hacker.say_something_smart,
   room_type: 'basement',
   price: 3.14,
+  guest_count: 3,
+  rating: 4,
   lat: 40.725024,
   lng: -73.996792,
   user_id: user1.id
@@ -28,6 +30,8 @@ spot2 = Spot.create!(
   description: Faker::Hacker.say_something_smart,
   room_type: 'lab',
   price: 200,
+  guest_count: 3,
+  rating: 4,
   lat: 40.748005,
   lng: -74.004786,
   user_id: user2.id
@@ -38,6 +42,8 @@ spot3 = Spot.create!(
   description: 'In China!',
   room_type: 'penthouse',
   price: 10010,
+  guest_count: 3,
+  rating: 2,
   lat: 39.909539,
   lng: 116.373625,
   user_id: user3.id
@@ -48,6 +54,8 @@ guest_spot = Spot.create!(
   description: Faker::Hacker.say_something_smart,
   room_type: 'lab',
   price: 101,
+  guest_count: 3,
+  rating: 3,
   lat: 37.772123,
   lng: -122.405293,
   user_id: guest.id
