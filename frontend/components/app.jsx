@@ -1,10 +1,12 @@
 import React from 'react';
 import NavbarContainer from './navbar/navbar_container';
+import Home from './home/home';
 
 const App = ({ children }) => (
   <div id="app">
-    <NavbarContainer />
-    <div>Hello World</div>
+    <header>
+      <NavbarContainer />
+    </header>
     {children}
   </div>
 );
