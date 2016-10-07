@@ -1,7 +1,6 @@
 #map-container {
   width: 40%;
   float: right;
-  // height: 100%;
   height: calc(100vh - 64px);
 }
 
@@ -10,6 +9,66 @@
   height: calc(100vh - 64px);
   float: left;
   overflow-y: scroll;
+  overflow-x: hidden;
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      color: #484848;
+      font-weight: 300;
+      padding: 20px;
+    }
+
+    .dates {
+      flex-grow: 1;
+
+      .DateRangePickerInput {
+        border: 0;
+      }
+
+      .DateRangePickerInput__arrow {
+        display: none;
+      }
+
+      .DateInput__display-text {
+        font-size: 14px;
+        border: 1px solid #cdcccd;
+      }
+
+      select {
+        font-size: 14px;
+        -webkit-appearance: none;
+        border: 1px solid #cacccd;
+        border-radius: 0;
+        background: transparent;
+        padding-top: 7px;
+        padding-bottom: 9px;
+        padding-left: 10px;
+        padding-right: 70px;
+        margin-left: 10px;
+      }
+    }
+
+    .room-type {
+      flex-grow: 1;
+
+      span {
+        float: left;
+      }
+
+      .checkbox-control {
+        float: left;
+        background: rgb(237, 239, 237);
+        border: 1px solid #cdcccd;
+        padding: 9px 5px 8px 7px;
+        margin: 15px 10px;
+      }
+    }
+
+
+  }
 }
 
 .search-page .spot-list li {
