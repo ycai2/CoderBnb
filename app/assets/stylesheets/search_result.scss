@@ -1,7 +1,21 @@
 #map-container {
   width: 40%;
+  float: right;
+  height: 100%;
 }
 
 .search-result {
   width: 60%;
+  height: 100%;
+  float: left;
+  overflow-y: scroll;
+}
+
+.search-page {
+  height: 100%;
+}
+
+.search-page li {
+  width: 40%;
+  float: left;
 }

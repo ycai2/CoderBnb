@@ -4,7 +4,7 @@ import MapView from './map_view';
 
 const Search = ({ spots, requestSpots }) => {
     return (
-      <div>
+      <div className="group search-page">
         <SearchResult
           spots={spots}
           requestSpots={requestSpots}
