@@ -3,7 +3,8 @@ class MarkerManager {
     this.map = map;
     this.markers = [];
     this._createMarkerFromSpot = this._createMarkerFromSpot.bind(this);
-
+    this._removeMarker = this._removeMarker.bind(this);
+    this._markersToRemove = this._markersToRemove.bind(this);
   }
 
   updateMarkers(spots) {
