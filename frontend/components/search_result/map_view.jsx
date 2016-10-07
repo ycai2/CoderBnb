@@ -3,10 +3,6 @@ import MarkerManager from '../../util/marker_manager';
 
 
 class MapView extends React.Component {
-  constructor(props) {
-    debugger
-    super(props);
-  }
   componentDidMount() {
     // find the `<map>` node on the DOM
     const mapDOMNode = this.refs.map;

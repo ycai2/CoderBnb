@@ -25,7 +25,7 @@
     }
 
     color: #fff;
-    padding: 48px 64px;
+    padding: 64px;
   }
 
   .content-body {
@@ -51,10 +51,10 @@
       border-top-right-radius: 2px;
       border-bottom-right-radius: 2px;
       background-color: #ff5a5f;
-      padding-top: 8px;
-      padding-bottom: 9px;
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-top: 13px;
+      padding-bottom: 16px;
+      padding-left: 50px;
+      padding-right: 50px;
       color: #fff;
       cursor: pointer;
     }
@@ -63,31 +63,23 @@
       background-color: #ff7e82;
     }
 
-    form input[type="date"] {
-      padding: 5px 10px;
-      font-size: 17px;
-      color: #aaaaaa;
-      border-top: 1px solid #cacccd;
-      border-bottom: 1px solid #cacccd;
-    }
-
     .home-location-input {
       border-left: 1px solid rgb(170, 170, 170);
-      border-right: 1px solid #cacccd;
-      padding: 10px;
+      padding: 15px;
+      padding-bottom: 17px;
       width: 180px;
     }
 
     select {
-      border-left: 1px solid #cacccd;
+      border-left: 0;
       border-right: none;
       border-top: 1px solid rgb(170, 170, 170);
       background: transparent no-repeat 96% 0;
       border-radius: 0;
-      padding: 8px;
+      padding: 13px;
+      padding-bottom: 17px;
       font-size: 16px;
       -webkit-appearance: none;
-      padding-bottom: 10px;
     }
   }
 
