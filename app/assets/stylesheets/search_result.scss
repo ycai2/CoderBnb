@@ -12,11 +12,8 @@
   overflow-y: scroll;
 }
 
-.search-page {
-  // height: 100%;
+.search-page li {
+  width: 40%;
+  min-width: 200px;
+  float: left;
 }
-
-// .search-page li {
-//   width: 40%;
-//   float: left;
-// }
