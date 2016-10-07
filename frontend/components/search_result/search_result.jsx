@@ -8,7 +8,7 @@ class SearchResult extends React.Component {
   render() {
     return (
       <div className="search-result">
-        <ul>
+        <ul className="group">
           {
             this.props.spots.map((spot) => {
               return <SearchResultItem spot={spot} key={spot.id} />
