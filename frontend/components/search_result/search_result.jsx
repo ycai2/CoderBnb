@@ -6,9 +6,19 @@ class SearchResult extends React.Component {
   }
 
   render() {
+    
     return (
       <div className="search-result">
-        <ul className="group">
+        <div className="filter">
+          <div className="dates">
+
+          </div>
+          <div className="room-type">
+          </div>
+          <div className="price-range">
+          </div>
+        </div>
+        <ul className="spot-list group">
           {
             this.props.spots.map((spot) => {
               return <SearchResultItem spot={spot} key={spot.id} />

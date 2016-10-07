@@ -3,7 +3,7 @@ import SearchResult from './search_result';
 import MapView from './map_view';
 
 const Search = ({ spots, requestSpots }) => {
-  debugger
+  
     return (
       <div className="group search-page">
         <SearchResult
