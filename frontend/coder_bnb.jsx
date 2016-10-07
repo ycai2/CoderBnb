@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { login } from './actions/session_actions';
+import { requestSpots } from './actions/spot_actions';
 import { logout } from './util/session_api_util';
 import Root from './components/root';
 
@@ -19,5 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
       store = configureStore(preloadedState);
     }
     window.store = store;
+    window.requestSpots = requestSpots;
     ReactDOM.render(<Root store={store} />, root);
 });

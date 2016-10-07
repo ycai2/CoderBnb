@@ -26,7 +26,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'newrelic_rpm'
 gem 'rails_12factor' # error feedback
-
+gem 'pry-rails'
+gem 'faker'
+gem 'paperclip', '~> 5.0.0.beta1'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -36,11 +38,9 @@ gem 'rails_12factor' # error feedback
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate'
-  gem 'faker'
 end
 
 group :development do
