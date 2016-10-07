@@ -47,7 +47,6 @@
 
     form button {
       font-size: 16px;
-      font-weight: lighter;
       border: 1px solid #ff5a5f;
       border-top-right-radius: 2px;
       border-bottom-right-radius: 2px;
@@ -56,6 +55,12 @@
       padding-bottom: 9px;
       padding-left: 40px;
       padding-right: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #ff7e82;
     }
 
     form input[type="date"] {
