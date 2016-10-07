@@ -34,4 +34,8 @@ class Spot < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
   )
+
+  def review_count
+    0
+  end
 end

@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import SearchResult from './search_result';
-import { login, clearErrors } from '../../actions/session_actions';
+import Search from './search';
 
 const mapStateToProps = ({ spots }) => {
   return {
@@ -15,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchResult);
+)(Search);
