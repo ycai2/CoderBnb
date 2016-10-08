@@ -44,19 +44,19 @@ class SearchResult extends React.Component {
               startDate={startDate}
               endDate={endDate}
             />
-            <select>
-              <option>1 coder</option>
-              <option>2 coders</option>
-              <option>3 coders</option>
-              <option>4 coders</option>
-            </select>
+            <div className="dropdown-wrapper">
+              <select>
+                <option>1 coder</option>
+                <option>2 coders</option>
+                <option>3 coders</option>
+                <option>4 coders</option>
+              </select>
+            </div>
           </div>
           <hr />
           <RoomType />
           <hr />
-          <div className="price-range">
-            <Price />
-          </div>
+          <Price />
         </div>
         <ul className="spot-list group">
           {

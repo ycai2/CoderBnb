@@ -1,34 +1,55 @@
 #map-container {
   width: 40%;
-  float: right;
+  float: left;
   height: calc(100vh - 64px);
 }
 
 .search-result {
-  width: 60%;
   height: calc(100vh - 64px);
+  width: 60%;
   float: left;
   overflow-y: scroll;
-  overflow-x: hidden;
 
   .filter {
     display: flex;
     flex-direction: column;
     height: 200px;
-    width: 90%;
-    margin: 0 auto;
 
     .title {
       color: #484848;
       font-weight: 300;
-      padding: 20px;
+      width: 16%;
+    }
+
+    hr {
+      width: 95%;
     }
 
     .dates {
+      align-items: center;
       flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 5px 20px;
+      box-sizing: border-box;
+
+      .DateRangePicker {
+        width: 56%;
+      }
 
       .DateRangePickerInput {
         border: 0;
+        width: 100%;
+      }
+
+      .DateInput {
+        width: 50%;
+      }
+
+      .DateInput__display-text--focused {
+        background: #fff;
+        border-radius: 0;
       }
 
       .DateRangePickerInput__arrow {
@@ -40,41 +61,73 @@
         border: 1px solid #cdcccd;
       }
 
+      .dropdown-wrapper {
+        width: 25%;
+      }
+
       select {
+        width: 100%;
         font-size: 14px;
         -webkit-appearance: none;
         border: 1px solid #cacccd;
         border-radius: 0;
         background: transparent;
         padding-top: 7px;
-        padding-bottom: 9px;
+        padding-bottom: 8px;
         padding-left: 10px;
-        padding-right: 70px;
-        margin-left: 10px;
       }
     }
 
     .room-type {
       flex-grow: 1;
+      display: flex;
+      align-items: center;
+      padding: 5px 20px;
+      box-sizing: border-box;
 
-      span {
-        float: left;
+      .checkbox-control-group {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
       }
 
       .checkbox-control {
-        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         background: rgb(237, 239, 237);
         border: 1px solid #cdcccd;
         padding: 9px 5px 8px 7px;
-        margin: 15px 10px;
+        width: 33%;
+        margin-left: 17px;
+
+        i {
+
+        }
+
+        label {
+          flex-grow: 1;
+          padding-left: 10px;
+        }
+
+        input {
+
+        }
       }
+
+
     }
 
     .price-range {
-      flex-grow: 1;
+      flex-grow: 2;
+      display: flex;
+      align-items: center;
+      padding: 5px 20px;
 
       .rheostat {
         overflow: visible;
+        margin-left: 20px;
+        width: 78%;
       }
 
       .rheostat-background {
@@ -105,13 +158,46 @@
         position: absolute;
         background-color: #dadfe8;
       }
+
+      .rheostat-horizontal {
+        height: 24px;
+      }
+
+      .rheostat-horizontal .rheostat-background {
+        height: 15px;
+        top: 0px;
+        width: 100%;
+      }
+
+      .rheostat-horizontal .rheostat-progress {
+        height: 13px;
+        top: 2px;
+      }
+
+      .rheostat-horizontal .rheostat-handle {
+        margin-left: -12px;
+        top: -5px;
+      }
+
+      .rheostat-horizontal .rheostat-handle:before,
+      .rheostat-horizontal .rheostat-handle:after {
+        top: 7px;
+        height: 10px;
+        width: 1px;
+      }
+
+      .rheostat-horizontal .rheostat-handle:before {
+        left: 10px;
+      }
+
+      .rheostat-horizontal .rheostat-handle:after {
+        left: 13px;
+      }
     }
 
   }
 }
 
 .search-page .spot-list li {
-  width: 40%;
   min-width: 200px;
-  float: left;
 }
