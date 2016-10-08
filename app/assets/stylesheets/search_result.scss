@@ -18,7 +18,7 @@
     .title {
       color: #484848;
       font-weight: 300;
-      flex-grow: 1;
+      width: 16%;
     }
 
     hr {
@@ -26,7 +26,7 @@
     }
 
     .dates {
-      align-items: baseline;
+      align-items: center;
       flex-grow: 1;
       display: flex;
       flex-direction: row;
@@ -35,16 +35,16 @@
       box-sizing: border-box;
 
       .DateRangePicker {
-        flex-grow: 1;
+        width: 56%;
       }
 
       .DateRangePickerInput {
         border: 0;
-        display: flex;
+        width: 100%;
       }
 
       .DateInput {
-        flex-grow: 1;
+        width: 50%;
       }
 
       .DateInput__display-text--focused {
@@ -62,8 +62,7 @@
       }
 
       .dropdown-wrapper {
-        flex-grow: 1;
-        padding: 0 8px;
+        width: 25%;
       }
 
       select {
@@ -82,21 +81,25 @@
     .room-type {
       flex-grow: 1;
       display: flex;
-      flex-direction: row;
-      align-items: baseline;
-      justify-content: space-around;
+      align-items: center;
       padding: 5px 20px;
       box-sizing: border-box;
 
+      .checkbox-control-group {
+        width: 83%;
+        display: flex;
+        justify-content: space-between;
+      }
+
       .checkbox-control {
-        flex-grow: 1;
         display: flex;
         align-items: center;
         justify-content: space-between;
         background: rgb(237, 239, 237);
         border: 1px solid #cdcccd;
         padding: 9px 5px 8px 7px;
-        margin: 10px;
+        width: 33%;
+        margin-left: 17px;
 
         i {
 
@@ -118,10 +121,13 @@
     .price-range {
       flex-grow: 2;
       display: flex;
-      flex-direction: row;
+      align-items: center;
+      padding: 5px 20px;
 
       .rheostat {
         overflow: visible;
+        margin-left: 20px;
+        width: 78%;
       }
 
       .rheostat-background {
