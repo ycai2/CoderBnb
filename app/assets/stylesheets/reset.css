@@ -20,7 +20,7 @@ body {
   box-sizing: content-box;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  -webkit-font-smoothing: autialiased;
+  -webkit-font-smoothing: antialiased;
   color: #484848;
 }
 
