@@ -73,10 +73,12 @@ class SearchResult extends React.Component {
 const SearchResultItem = ({ spot }) => {
   return (
     <li>
-      <img src={spot.image_url} />
-      <h3>{spot.price}</h3>
-      <h3>{spot.title}</h3>
-      <div>
+      <div className="thumbnail">
+        <img src={spot.image_url} />
+        <h3>{spot.price}</h3>
+      </div>
+      <div className="thumbnail-info">
+        <h3>{spot.title}</h3>
         <span>{spot.room_type}</span>
         <span>{spot.guest_count}</span>
         <span>{spot.rating}</span>
