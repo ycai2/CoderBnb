@@ -84,8 +84,12 @@ class Navbar extends React.Component {
               <i className="fa fa-file-code-o fa-3"></i>&nbsp;coderbnb
             </a>
           </h1>
-          <i className="fa fa-search fa-3"></i>
+          <div className="navbar-search">
+            <i className="fa fa-search fa-3"></i>
+
+          </div>
           {options}
+          <Link to='/spots/new' className="new-spot-form">Become a Host</Link>
         </nav>
 
         <Modal

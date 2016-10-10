@@ -38,9 +38,9 @@
 }
 
 
-.navbar-list > li, .logout {
+.navbar-list > li {
   padding: 0 19px;
-  line-height: 63px;
+  line-height: 62px;
   display: block;
 }
 
@@ -95,4 +95,26 @@ hr {
   transition-duration: 0.3s;
   transition-property: transform;
   transition-timing-function: ease-out;
+}
+
+.navbar-search {
+  float: left;
+  line-height: 62px;
+  height: 61px;
+
+
+  i {
+    font-size: 28px;
+    color: #cdcccd;
+    padding: 18px 15px;
+  }
+
+}
+
+.new-spot-form {
+  float: right;
+  border: 2px solid #c4c4c4;
+  line-height: 28px;
+  padding: 0 10px;
+  margin: 15px 20px;
 }
