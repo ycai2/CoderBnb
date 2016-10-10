@@ -20,6 +20,6 @@ class SpotForm extends React.Component {
       </form>
     );
   }
-};
+}
 
 export default SpotForm;
