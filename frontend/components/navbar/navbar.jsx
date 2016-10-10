@@ -86,10 +86,10 @@ class Navbar extends React.Component {
           </h1>
           <div className="navbar-search">
             <i className="fa fa-search fa-3"></i>
-            
-            <Link to='/spots/new'>Become a Host</Link>
+
           </div>
           {options}
+          <Link to='/spots/new' className="new-spot-form">Become a Host</Link>
         </nav>
 
         <Modal

@@ -58,7 +58,7 @@ class SearchResult extends React.Component {
           <hr />
           <Price />
         </div>
-        <ul className="spot-list group">
+        <ul className="spot-list">
           {
             this.props.spots.map((spot) => {
               return <SearchResultItem spot={spot} key={spot.id} />
