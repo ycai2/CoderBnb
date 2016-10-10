@@ -9,7 +9,7 @@ class LoginForm extends React.Component {
       password: "",
     };
     this.guest = {
-      email: "guest@email.com",
+      email: "guest@gmail.com",
       password: "starwar",
     };
 

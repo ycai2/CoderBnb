@@ -40,7 +40,7 @@
 
 .navbar-list > li, .logout {
   padding: 0 19px;
-  line-height: 63px;
+  line-height: 62px;
   display: block;
 }
 
@@ -95,4 +95,8 @@ hr {
   transition-duration: 0.3s;
   transition-property: transform;
   transition-timing-function: ease-out;
+}
+
+.navbar-search {
+  display: inline;
 }
