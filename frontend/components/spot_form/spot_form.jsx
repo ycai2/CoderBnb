@@ -12,11 +12,14 @@ class SpotForm extends React.Component {
       <form>
         <h1>Where's your place located?</h1>
         <label htmlFor="country">Country</label>
-        <select>
+        <select id="country">
           {this.countryList.map((country, idx) => (
             <option value={country} key={idx}>{country}</option>
           ))}
         </select>
+
+        <label htmlFor="street">Street Address</label>
+        
       </form>
     );
   }

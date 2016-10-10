@@ -1,22 +1,17 @@
-import { UPDATE_BOUNDS } from '../actions/filter_actions';
+import { UPDATE_BOUNDS, UPDATE_LOCATION } from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
 const defaultState = Object.freeze({
-  spots: [],
-  filters: {
-    bounds: {}
-  }
+  bounds: {},
+  location: {}
 });
 
 const FilterReducer = (state = defaultState, action) => {
   switch (action.type) {
     case UPDATE_BOUNDS:
-      const newFilter = {
-        filters: {
-          bounds: action.bounds
-        }
-      }
-      return merge({}, state, newFilter);
+      return merge({}, state, {bounds: action.bounds});
+    case UPDATE_LOCATION:
+      return merge({}, state, {location: action.location});
     default:
       return state;
   }

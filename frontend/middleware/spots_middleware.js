@@ -9,7 +9,9 @@ const SpotsMiddleware = ({getState, dispatch}) => next => action => {
       dispatch(requestSpots());
       break;
     case REQUEST_SPOTS:
-      const success = data => dispatch(receiveSpots(data));
+      const success = (data) => {
+        dispatch(receiveSpots(data));
+      };
       const filters = getState().filters;
       fetchSpots(filters, success);
       break;

@@ -39,10 +39,15 @@
       padding-bottom: 24px;
     }
 
+    form {
+      display: flex;
+    }
+
     form input {
       border-top: 1px solid rgb(170, 170, 170);
       border-bottom: 1px solid rgb(170, 170, 170);
       font-size: 14px;
+      flex: 1;
     }
 
     form button {
@@ -68,6 +73,7 @@
       padding: 15px;
       padding-bottom: 17px;
       width: 180px;
+      flex: 1;
     }
 
     select {
