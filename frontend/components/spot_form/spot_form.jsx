@@ -1,10 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-
-class SpotForm extends React.Component {
-  render() {
-    return (<h1>New Spot</h1>);
-=======
 import { countryList } from '../../util/country_list';
 
 class SpotForm extends React.Component {
@@ -25,8 +19,7 @@ class SpotForm extends React.Component {
         </select>
       </form>
     );
->>>>>>> master
   }
-};
+}
 
 export default SpotForm;
