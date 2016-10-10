@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import Home from './home/home';
 import SearchContainer from './search_result/search_container';
+import SpotForm from './spot_form/spot_form_container';
 
 const Root = ({ store }) => {
   return (
@@ -12,6 +13,7 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
           <Route path="/spots" component={SearchContainer} />
+          <Route path="/spots/new" component={SpotForm} />
         </Route>
       </Router>
     </Provider>
