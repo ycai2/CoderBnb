@@ -2,8 +2,8 @@ import React from 'react';
 import SearchResult from './search_result';
 import MapView from './map_view';
 
-const Search = ({ spots, requestSpots }) => {
-  
+const Search = ({ spots, requestSpots, updateBounds }) => {
+
     return (
       <div className="group search-page">
         <SearchResult
@@ -12,6 +12,7 @@ const Search = ({ spots, requestSpots }) => {
         />
         <MapView
           spots={spots}
+          updateBounds={updateBounds}
         />
       </div>
     );

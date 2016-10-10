@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import Search from './search';
+import { requestSpots } from '../../actions/spot_actions';
+import { updateBounds } from '../../actions/filter_actions';
 
 const mapStateToProps = ({ spots }) => {
   return {
@@ -8,6 +10,7 @@ const mapStateToProps = ({ spots }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+  updateBounds: (bounds) => dispatch(updateBounds(bounds)),
   requestSpots: () => dispatch(requestSpots())
 });
 
