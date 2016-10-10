@@ -6,6 +6,10 @@ const mapStateToProps = ({  }) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   };
 };
 
