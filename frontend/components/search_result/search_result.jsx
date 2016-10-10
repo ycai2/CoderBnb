@@ -25,7 +25,7 @@ class SearchResult extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestSpots();
+    // this.props.requestSpots();
   }
 
   render() {

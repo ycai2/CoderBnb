@@ -29,7 +29,8 @@ class MapView extends React.Component {
       const { north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
         northEast: { lat:north, lng: east },
-        southWest: { lat: south, lng: west } };
+        southWest: { lat: south, lng: west }
+      };
       this.props.updateBounds(bounds);
       // this.props.updateFilter('bounds', bounds);
     });
