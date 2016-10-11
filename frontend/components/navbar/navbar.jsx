@@ -51,17 +51,20 @@ class Navbar extends React.Component {
 
   userOptions() {
     return (
-      <ul className="navbar-list group">
-        <li><Link to='/'>Trips</Link></li>
-        <li className="user-label">
-          <Link to='/'>{this.props.currentUser.firstName}</Link>
-          <ul className="user-menu">
-            <li><Link to='/'>Edit Profile</Link></li>
-            <hr/>
-            <li onClick={this.props.logout} className="logout">Log Out</li>
-          </ul>
-        </li>
-      </ul>
+      <div>
+        <ul className="navbar-list group">
+          <li><Link to='/'>Trips</Link></li>
+          <li className="user-label">
+            <Link to='/'>{this.props.currentUser.firstName}</Link>
+            <ul className="user-menu">
+              <li><Link to='/'>Edit Profile</Link></li>
+              <hr/>
+              <li onClick={this.props.logout} className="logout">Log Out</li>
+            </ul>
+          </li>
+        </ul>
+        <Link to='/spots/new' className="new-spot-form">Become a Host</Link>
+      </div>
     );
   }
 
@@ -80,6 +83,7 @@ class Navbar extends React.Component {
     }
   }
 
+
   render() {
     let options = (this.props.currentUser) ? this.userOptions() : this.guestOptions();
     return (
@@ -95,7 +99,7 @@ class Navbar extends React.Component {
             <AutocompleteContainer className="autocomplete-form" callback={this.redirectToSearch} />
           </div>
           {options}
-          <Link to='/spots/new' className="new-spot-form">Become a Host</Link>
+
         </nav>
 
         <Modal
