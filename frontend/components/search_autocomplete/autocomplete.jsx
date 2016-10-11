@@ -21,10 +21,16 @@ class Autocomplete extends React.Component {
       const location = this.autocomplete.getPlace().geometry.location;
       const lat = location.lat();
       const lng = location.lng();
+
       if (this.props.callback) {
         this.props.callback(this.autocomplete.getPlace());
-      } else {
-        this.props.updateLocation({lat, lng});
+      }
+      
+      if (this.props.updateLocation) {
+        this.props.updateLocation(
+          {lat, lng},
+          this.autocomplete.getPlace().formatted_address
+        );
       }
     }
   }

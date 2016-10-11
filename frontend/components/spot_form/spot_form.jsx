@@ -5,24 +5,40 @@ import AutocompleteContainer from '../search_autocomplete/autocomplete_container
 class SpotForm extends React.Component {
   constructor(props) {
     super(props);
-    this.countryList = countryList;
     this.state = {
       city: "",
       state: "",
       zipcode: "",
+      title: "",
+      description: "",
       lat: 40.7250239,
       lng: -73.996792,
+      guest_count: 1,
     }
     this.fillForm = this.fillForm.bind(this);
-    this.createSpot = this.createSpot.bind(this);
+    this.submitSpot = this.submitSpot.bind(this);
+    this.updateField = this.updateField.bind(this);
   }
 
   componentDidMount() {
     const mapDOMNode = this.refs.map;
     const center = {lat: this.state.lat, lng: this.state.lng};
-    const mapOptions = {center, zoom: 13};
+    const mapOptions = {
+      center,
+      zoom: 15,
+      disableDefaultUI: true,
+      disableDoubleClickZoom: true,
+      scaleControl: false,
+      scrollwheel: false,
+      zoomControl: false,
+      draggable: false,
+      navigationControl: false
+    };
+    const marker = new google.maps.Marker();
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
+    marker.setMap(this.map);
+    marker.setPosition(center);
   }
 
   componentDidUpdate() {
@@ -53,8 +69,18 @@ class SpotForm extends React.Component {
 		});
   }
 
-  createSpot() {
-
+  submitSpot(e) {
+    e.preventDefault();
+    const newSpot = {
+      title: this.state.title,
+      description: this.state.description,
+      room_type: "lab",
+      price: 255,
+      lat: this.state.lat,
+      lng: this.state.lng,
+      guest_count: this.state.guest_count
+    };
+    this.props.createSpot(newSpot);
   }
 
   render() {
@@ -72,12 +98,12 @@ class SpotForm extends React.Component {
         <input id="zipcode" value={this.state.zipcode} onChange={this.updateField('zipcode')} />
 
         <label htmlFor="title">Title</label>
-        <input id="title" />
+        <input id="title" value={this.state.title} onChange={this.updateField('title')} />
         <label htmlFor="description">Description</label>
-        <textarea id="description"></textarea>
+        <textarea id="description" value={this.state.description} onChange={this.updateField('description')}></textarea>
 
         <label htmlFor="guest-count">Max Guest Count</label>
-        <select id="guest-count">
+        <select id="guest-count" selected={this.state.guest_count} onChange={this.updateField('guest_count')}>
           <option value="1">1 coder</option>
           <option value="2">2 coders</option>
           <option value="3">3 coders</option>
@@ -90,7 +116,7 @@ class SpotForm extends React.Component {
         <hr />
         <div className="button-control">
           <Link to="/">Cancel</Link>
-          <button onClick={this.createSpot}>Finish</button>
+          <button onClick={this.submitSpot}>Finish</button>
         </div>
       </form>
     );

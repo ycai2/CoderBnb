@@ -7,7 +7,7 @@ const mapStateToProps = ({  }) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateLocation: (location) => dispatch(updateLocation(location))
+    updateLocation: (coords, location) => dispatch(updateLocation(coords, location))
   };
 };
 

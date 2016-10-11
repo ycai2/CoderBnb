@@ -8,3 +8,14 @@ export const fetchSpots = (filters, success) => {
     error: () => console.log('error'),
   });
 };
+
+export const createSpot = (spot, success) => {
+  $.ajax({
+    url: 'api/spots/new',
+    data: {
+      spot
+    },
+    success,
+    error: () => console.log('error'),
+  });
+};

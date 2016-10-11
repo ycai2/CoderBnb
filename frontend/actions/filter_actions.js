@@ -7,8 +7,9 @@ export const updateBounds = (bounds) => ({
   bounds
 });
 
-export const updateLocation = (location) => ({
+export const updateLocation = (coords, location) => ({
   type: UPDATE_LOCATION,
+  coords, 
   location
 });
 
