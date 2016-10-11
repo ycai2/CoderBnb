@@ -1,7 +1,8 @@
 import React from 'react';
 import { DateRangePicker } from 'react-dates';
-import RoomType from './filters/room_type';
-import Price from './filters/price';
+import Rheostat from 'rheostat';
+import merge from 'lodash/merge';
+
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -10,14 +11,26 @@ class SearchResult extends React.Component {
       focusedInput: null,
       startDate: null,
       endDate: null,
+      guest_count: 1,
+      room_type: {
+        basement: false,
+        lab: false,
+        penthouse: false
+      },
+      min_price: 1,
+      max_price: 1000
     };
 
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
+    this.updateField = this.updateField.bind(this);
+    this.checkField = this.checkField.bind(this);
+    this.updatePrice = this.updatePrice.bind(this);
   }
 
   onDatesChange({ startDate, endDate }) {
     this.setState({ startDate, endDate });
+    this.props.updateFilters({ startDate, endDate });
   }
 
   onFocusChange(focusedInput) {
@@ -26,6 +39,36 @@ class SearchResult extends React.Component {
 
   componentDidMount() {
     // this.props.requestSpots();
+  }
+
+  updateField(field) {
+    return (e) => {
+      this.setState({
+			     [field]: e.currentTarget.value
+		  });
+      this.props.updateFilters({ [field]: e.currentTarget.value });
+    };
+  }
+
+  checkField(field) {
+    return (e) => {
+      const currentChecked = this.state.room_type[field];
+      const newRoomType = merge({}, this.state.room_type, {[field]: !currentChecked});
+      this.setState({
+        room_type: newRoomType
+      });
+      this.props.updateFilters({ room_type: newRoomType });
+    }
+  }
+
+  updatePrice(e) {
+    const newState = {
+      min_price: e.values[0],
+      max_price: e.values[1]
+    };
+
+    this.setState(newState);
+    this.props.updateFilters(newState);
   }
 
   render() {
@@ -45,7 +88,7 @@ class SearchResult extends React.Component {
               endDate={endDate}
             />
             <div className="dropdown-wrapper">
-              <select>
+              <select selected={this.state.guest_count} onChange={this.updateField('guest_count')}>
                 <option>1 coder</option>
                 <option>2 coders</option>
                 <option>3 coders</option>
@@ -54,9 +97,52 @@ class SearchResult extends React.Component {
             </div>
           </div>
           <hr />
-          <RoomType />
+          <div className="room-type">
+            <span className="room-type-title title">Room type</span>
+            <div className="checkbox-control-group group">
+              <div className="checkbox-control">
+                <i className="fa fa-server" aria-hidden="true"></i>
+                <label htmlFor="room-type-basement">Basement</label>
+                <input
+                  type="checkbox"
+                  id="room-type-basement"
+                  checked={this.state.room_type.basement}
+                  onChange={this.checkField('basement')}
+                />
+              </div>
+              <div className="checkbox-control">
+                <i className="fa fa-laptop" aria-hidden="true"></i>
+                <label htmlFor="room-type-lab">Lab</label>
+                <input
+                  type="checkbox"
+                  id="room-type-lab"
+                  checked={this.state.room_type.lab}
+                  onChange={this.checkField('lab')}
+                />
+              </div>
+              <div className="checkbox-control">
+                <i className="fa fa-rocket" aria-hidden="true"></i>
+                <label htmlFor="room-type-penthouse">Penthouse</label>
+                <input
+                  type="checkbox"
+                  id="room-type-penthouse"
+                  value="penthouse"
+                  checked={this.state.room_type.penthouse}
+                  onChange={this.checkField('penthouse')}
+                />
+              </div>
+            </div>
+          </div>
           <hr />
-          <Price />
+          <div className="price-range group">
+            <span className="title price-title">Price range</span>
+            <Rheostat class="price-range-picker"
+              min={1}
+              max={1000}
+              values={[this.state.min_price, this.state.max_price]}
+              onChange={this.updatePrice}
+            />
+          </div>
         </div>
         <ul className="spot-list">
           {

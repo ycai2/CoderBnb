@@ -45,4 +45,9 @@ class Spot < ActiveRecord::Base
       .where("lng > ?", bounds[:southWest][:lng])
       .where("lng < ?", bounds[:northEast][:lng])
   end
+
+  def self.as_room_type(room_types)
+    filtered_types = room_types.select { |_, v| v == "true" }.keys
+    self.where({room_type: filtered_types})
+  end
 end

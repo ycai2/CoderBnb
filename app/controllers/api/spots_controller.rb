@@ -1,8 +1,11 @@
 class Api::SpotsController < ApplicationController
   def index
     filters = params[:filters]
-    debugger
-    @spots = Spot.in_bounds(filters[:bounds])
+    if filters[:room_type].has_value?("true")
+      @spots = Spot.in_bounds(filters[:bounds]).as_room_type(filters[:room_type])
+    else
+      @spots = Spot.in_bounds(filters[:bounds])
+    end
   end
 
   def show
