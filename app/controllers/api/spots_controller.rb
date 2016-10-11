@@ -1,6 +1,8 @@
 class Api::SpotsController < ApplicationController
   def index
-    @spots = Spot.in_bounds(params[:filters][:bounds])
+    filters = params[:filters]
+    debugger
+    @spots = Spot.in_bounds(filters[:bounds])
   end
 
   def show
@@ -35,6 +37,14 @@ class Api::SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:title, :description, :room_type, :price, :lat, :lng, :guest_count)
+    params.require(:spot).permit(
+      :title,
+      :description,
+      :room_type,
+      :price,
+      :lat,
+      :lng,
+      :guest_count,
+    )
   end
 end

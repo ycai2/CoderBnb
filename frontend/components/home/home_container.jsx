@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateLocation, updateFilters } from '../../actions/filter_actions';
+import { updateLocation, updateFilter, updateFilters } from '../../actions/filter_actions';
 import Home from './home';
 
 const mapStateToProps = ({  }) => ({
@@ -8,7 +8,8 @@ const mapStateToProps = ({  }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateLocation: (location) => dispatch(updateLocation(location)),
-  updateFilter: (filters) => dispatch(updateFilter(filters))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  updateFilters: (filters) => dispatch(updateFilters(filters)),
 });
 
 export default connect(
