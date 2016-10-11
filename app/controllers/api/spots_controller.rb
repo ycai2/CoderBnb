@@ -9,7 +9,6 @@ class Api::SpotsController < ApplicationController
     @spots = @spots.in_bounds(filters[:bounds])
                    .in_price_range(filters[:min_price], filters[:max_price])
                    .can_fit(filters[:guest_count])
-
   end
 
   def show
