@@ -1,8 +1,14 @@
 class Api::SpotsController < ApplicationController
   def index
     filters = params[:filters]
-    debugger
-    @spots = Spot.in_bounds(filters[:bounds])
+    if filters[:room_type].has_value?("true")
+      @spots = Spot.as_room_type(filters[:room_type])
+    else
+      @spots = Spot.all
+    end
+    @spots = @spots.in_bounds(filters[:bounds])
+                   .in_price_range(filters[:min_price], filters[:max_price])
+                   .can_fit(filters[:guest_count])
   end
 
   def show

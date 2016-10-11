@@ -2,6 +2,7 @@
   width: 40%;
   float: left;
   height: calc(100vh - 64px);
+
 }
 
 .search-result {
@@ -188,6 +189,10 @@
     }
 
   }
+}
+
+.search-page {
+  z-index: -5;
 }
 
 .search-page .spot-list {

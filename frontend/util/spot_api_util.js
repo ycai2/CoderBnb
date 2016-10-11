@@ -1,4 +1,10 @@
 export const fetchSpots = (filters, success) => {
+  if (filters.startDate) {
+    filters.startDate = filters.startDate.toString();
+  }
+  if (filters.endDate) {
+    filters.endDate = filters.endDate.toString();
+  }
   $.ajax({
     url: 'api/spots',
     data: {

@@ -22,6 +22,6 @@ export const updateFilter = (filter, value) => ({
 })
 
 export const updateFilters = (filters) => ({
-  type: UPDATE_FILTER,
+  type: UPDATE_FILTERS,
   filters
 })

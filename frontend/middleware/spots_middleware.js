@@ -3,9 +3,10 @@ import {
   RECEIVE_SPOTS,
   CREATE_SPOT,
   receiveSpots,
-  receiveSpot
+  receiveSpot,
+  requestSpots
 } from '../actions/spot_actions';
-import { UPDATE_BOUNDS } from '../actions/filter_actions';
+import { UPDATE_BOUNDS, UPDATE_FILTERS } from '../actions/filter_actions';
 import { fetchSpots, createSpot } from '../util/spot_api_util';
 
 const SpotsMiddleware = ({getState, dispatch}) => next => action => {
@@ -17,6 +18,11 @@ const SpotsMiddleware = ({getState, dispatch}) => next => action => {
   };
   switch (action.type) {
     case UPDATE_BOUNDS:
+      next(action);
+      dispatch(requestSpots());
+      break;
+
+    case UPDATE_FILTERS:
       next(action);
       dispatch(requestSpots());
       break;
