@@ -19,7 +19,7 @@
 #
 
 class Spot < ActiveRecord::Base
-  validates :title, :description, :room_type, :price, :lat, :lng, :user_id, presence: true
+  validates :title, :description, :room_type, :price, :lat, :lng, :user_id, :guest_count, presence: true
   validates :room_type, inclusion: {
     in: %w(basement lab penthouse),
     message: "%{value} is not a valid room type for coders"
