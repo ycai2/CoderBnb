@@ -89,10 +89,10 @@ class SearchResult extends React.Component {
             />
             <div className="dropdown-wrapper">
               <select selected={this.state.guest_count} onChange={this.updateField('guest_count')}>
-                <option>1 coder</option>
-                <option>2 coders</option>
-                <option>3 coders</option>
-                <option>4 coders</option>
+                <option value={1}>1 coder</option>
+                <option value={2}>2 coders</option>
+                <option value={3}>3 coders</option>
+                <option value={4}>4 coders</option>
               </select>
             </div>
           </div>

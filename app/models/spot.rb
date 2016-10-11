@@ -50,4 +50,13 @@ class Spot < ActiveRecord::Base
     filtered_types = room_types.select { |_, v| v == "true" }.keys
     self.where({room_type: filtered_types})
   end
+
+  def self.in_price_range(min_price, max_price)
+    self.where("price >= ?", min_price)
+      .where("price < ?", max_price)
+  end
+
+  def self.can_fit(guest_count)
+    self.where("guest_count >= ?", guest_count)
+  end
 end
