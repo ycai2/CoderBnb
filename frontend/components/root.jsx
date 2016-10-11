@@ -7,13 +7,20 @@ import SearchContainer from './search_result/search_container';
 import SpotForm from './spot_form/spot_form_container';
 
 const Root = ({ store }) => {
+  const _ensureLoggedIn = () => {
+    if (!store.getState().session.currentUser) {
+      hashHistory.goBack();
+      // hashHistory.replace('/');
+    }
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={HomeContainer} />
           <Route path="/spots" component={SearchContainer} />
-          <Route path="/spots/new" component={SpotForm} />
+          <Route path="/spots/new" component={SpotForm} onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>
