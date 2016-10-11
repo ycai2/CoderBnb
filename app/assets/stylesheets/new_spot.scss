@@ -1,0 +1,69 @@
+.new-spot-form-info {
+  width: 500px;
+  margin: auto;
+  padding: 36px;
+  display: flex;
+  flex-flow: column nowrap;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 400;
+    padding: 20px 0;
+  }
+
+  label {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+
+  input, select {
+    -webkit-appearance: none;
+    border: 1px solid #cdcccd;
+    padding: 20px 20px;
+    font-size: 16px;
+    border-radius: 2px;
+
+  }
+
+  textarea {
+    height: 200px;
+    border: 1px solid #cdcccd;
+  }
+
+  #new-spot-map-container {
+    margin: 20px 0;
+    height: 500px;
+    width: 100%;
+  }
+
+  hr {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .button-control {
+    display: flex;
+    justify-content: space-between;
+    color: #767676;
+    font-weight: 300;
+    font-size: 16px;
+    padding: 10px 0;
+
+    a {
+      padding: 10px 0;
+    }
+
+    button {
+      font-weight: 700;
+      color: #fff;
+      background: #ff5a5f;
+      border-radius: 2px;
+      padding: 10px 50px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff7e82;
+    }
+  }
+}

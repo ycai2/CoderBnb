@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
+import { withRouter } from 'react-router';
 
 
 class MapView extends React.Component {
@@ -56,4 +57,4 @@ class MapView extends React.Component {
   }
 }
 
-export default MapView;
+export default withRouter(MapView);
