@@ -14,10 +14,4 @@ const configureStore = (preloadedState = {}) => (
   )
 );
 
-  // return (
-  //
-  // )
-  // For development without devtools
-
-
 export default configureStore;

@@ -24,7 +24,8 @@ class Home extends React.Component {
     this.setState({ focusedInput });
   }
 
-  redirectToSpots() {
+  redirectToSpots(e) {
+    e.preventDefault();
     hashHistory.push('/spots');
   }
 

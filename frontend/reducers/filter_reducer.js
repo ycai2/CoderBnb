@@ -7,6 +7,7 @@ const defaultState = Object.freeze({
 });
 
 const FilterReducer = (state = defaultState, action) => {
+  // debugger
   switch (action.type) {
     case UPDATE_BOUNDS:
       return merge({}, state, {bounds: action.bounds});

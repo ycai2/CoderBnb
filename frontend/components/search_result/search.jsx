@@ -8,7 +8,6 @@ const Search = ({ spots, filters, requestSpots, updateBounds }) => {
       <div className="group search-page">
         <SearchResult
           spots={spots}
-          requestSpots={requestSpots}
         />
         <MapView
           spots={spots}

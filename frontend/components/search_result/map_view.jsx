@@ -17,6 +17,9 @@ class MapView extends React.Component {
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this._registerListeners();
+    if (!!this.props.filters.location.lat && !!this.props.filters.location.lat) {
+      this.map.setCenter(this.props.filters.location);
+    }
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
