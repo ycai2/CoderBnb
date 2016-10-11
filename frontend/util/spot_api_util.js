@@ -11,7 +11,8 @@ export const fetchSpots = (filters, success) => {
 
 export const createSpot = (spot, success) => {
   $.ajax({
-    url: 'api/spots/new',
+    url: 'api/spots',
+    method: 'post',
     data: {
       spot
     },
