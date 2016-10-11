@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import SignupFormContainer from '../session_form/signup_form_container';
 import LoginFormContainer from '../session_form/login_form_container';
 import modalStyle from '../session_form/session_form_css';
@@ -18,6 +18,7 @@ class Navbar extends React.Component {
     this.openSignup = this.openSignup.bind(this);
     this.openLogin = this.openLogin.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.redirectToSearch = this.redirectToSearch.bind(this);
   }
 
   componentWillMount() {
@@ -52,7 +53,6 @@ class Navbar extends React.Component {
     return (
       <ul className="navbar-list group">
         <li><Link to='/'>Trips</Link></li>
-        <li><Link to='/'>Help</Link></li>
         <li className="user-label">
           <Link to='/'>{this.props.currentUser.firstName}</Link>
           <ul className="user-menu">
@@ -68,11 +68,16 @@ class Navbar extends React.Component {
   guestOptions() {
     return (
       <ul className="navbar-list group">
-        <li><Link to='/'>Help</Link></li>
         <li onClick={this.openSignup}>Sign Up</li>
         <li onClick={this.openLogin}>Log In</li>
       </ul>
     )
+  }
+
+  redirectToSearch() {
+    if (location.hash.split("?")[0] === "#/") {
+      hashHistory.replace('/spots');
+    }
   }
 
   render() {
@@ -87,7 +92,7 @@ class Navbar extends React.Component {
           </h1>
           <div className="navbar-search">
             <i className="fa fa-search fa-3"></i>
-            <AutocompleteContainer className="autocomplete-form" />
+            <AutocompleteContainer className="autocomplete-form" callback={this.redirectToSearch} />
           </div>
           {options}
           <Link to='/spots/new' className="new-spot-form">Become a Host</Link>

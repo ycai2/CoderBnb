@@ -3,16 +3,19 @@ import merge from 'lodash/merge';
 
 const defaultState = Object.freeze({
   bounds: {},
+  coords: {},
   location: {}
 });
 
 const FilterReducer = (state = defaultState, action) => {
-  // debugger
   switch (action.type) {
     case UPDATE_BOUNDS:
       return merge({}, state, {bounds: action.bounds});
     case UPDATE_LOCATION:
-      return merge({}, state, {location: action.location});
+      return merge({}, state, {
+        coords: action.coords,
+        location: action.location
+      });
     default:
       return state;
   }

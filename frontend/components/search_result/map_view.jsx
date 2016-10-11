@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
+import { withRouter } from 'react-router';
 
 
 class MapView extends React.Component {
@@ -17,15 +18,15 @@ class MapView extends React.Component {
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this._registerListeners();
-    if (!!this.props.filters.location.lat && !!this.props.filters.location.lat) {
-      this.map.setCenter(this.props.filters.location);
+    if (!!this.props.filters.coords.lat && !!this.props.filters.coords.lat) {
+      this.map.setCenter(this.props.filters.coords);
     }
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
   componentDidUpdate() {
-    if (!!this.props.filters.location.lat && !!this.props.filters.location.lat) {
-      this.map.setCenter(this.props.filters.location);
+    if (!!this.props.filters.coords.lat && !!this.props.filters.coords.lat) {
+      this.map.setCenter(this.props.filters.coords);
     }
     this.MarkerManager.updateMarkers(this.props.spots);
   }
@@ -56,4 +57,4 @@ class MapView extends React.Component {
   }
 }
 
-export default MapView;
+export default withRouter(MapView);
