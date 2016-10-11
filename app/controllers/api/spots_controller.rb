@@ -12,7 +12,14 @@ class Api::SpotsController < ApplicationController
   end
 
   def create
+    @spot = Spot.new(spot_params)
+    @spot.user_id = currentUser.id
 
+    if @spot.save
+      render :show
+    else
+      render json: @spot, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -28,6 +35,6 @@ class Api::SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:title, :description, :room_type, :price, :lat, :lng)
+    params.require(:spot).permit(:title, :description, :room_type, :price, :lat, :lng, :guest_count)
   end
 end
