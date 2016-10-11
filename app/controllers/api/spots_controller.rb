@@ -13,7 +13,7 @@ class Api::SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
-    @spot.user_id = currentUser.id
+    @spot.user_id = current_user.id
 
     if @spot.save
       render :show
