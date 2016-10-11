@@ -10,8 +10,10 @@ export const fetchSpots = (filters, success) => {
 };
 
 export const createSpot = (spot, success) => {
+  debugger
   $.ajax({
     url: 'api/spots/new',
+    method: 'post',
     data: {
       spot
     },
