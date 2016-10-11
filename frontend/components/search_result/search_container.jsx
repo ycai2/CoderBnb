@@ -3,9 +3,11 @@ import Search from './search';
 import { requestSpots } from '../../actions/spot_actions';
 import { updateBounds } from '../../actions/filter_actions';
 
-const mapStateToProps = ({ spots }) => {
+const mapStateToProps = ({ spots, filters }) => {
+  debugger
   return {
-    spots
+    spots,
+    filters
   };
 };
 

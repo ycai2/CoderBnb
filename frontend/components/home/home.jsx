@@ -1,6 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import { DateRangePicker } from 'react-dates';
+import AutocompleteContainer from '../search_autocomplete/autocomplete_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -23,7 +24,8 @@ class Home extends React.Component {
     this.setState({ focusedInput });
   }
 
-  redirectToSpots() {
+  redirectToSpots(e) {
+    e.preventDefault();
     hashHistory.push('/spots');
   }
 
@@ -39,7 +41,7 @@ class Home extends React.Component {
           <div className="content-body">
             <h2>Seach over 2 million spots in over 3 countries</h2>
             <form>
-              <input type="text" placeholder="Where to?" className="home-location-input"/>
+              <AutocompleteContainer className="home-location-input" />
               <DateRangePicker
                 {...this.props}
                 onDatesChange={this.onDatesChange}

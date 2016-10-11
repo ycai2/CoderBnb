@@ -17,10 +17,16 @@ class MapView extends React.Component {
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this._registerListeners();
+    if (!!this.props.filters.location.lat && !!this.props.filters.location.lat) {
+      this.map.setCenter(this.props.filters.location);
+    }
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
   componentDidUpdate() {
+    if (!!this.props.filters.location.lat && !!this.props.filters.location.lat) {
+      this.map.setCenter(this.props.filters.location);
+    }
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
@@ -28,9 +34,10 @@ class MapView extends React.Component {
     google.maps.event.addListener(this.map, 'idle', () => {
       const { north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
-        northEast: { lat:north, lng: east },
+        northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west }
       };
+
       this.props.updateBounds(bounds);
       // this.props.updateFilter('bounds', bounds);
     });

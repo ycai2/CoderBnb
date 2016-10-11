@@ -101,6 +101,8 @@ hr {
   float: left;
   line-height: 62px;
   height: 61px;
+  width: 50%;
+  display: flex;
 
 
   i {
@@ -109,6 +111,15 @@ hr {
     padding: 18px 15px;
   }
 
+  .autocomplete-form {
+    flex: 1;
+  }
+
+  .autocomplete-form:focus {
+    outline: none;
+    line-height: 100%;
+    font-size: 14px;
+  }
 }
 
 .new-spot-form {

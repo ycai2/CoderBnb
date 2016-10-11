@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import SignupFormContainer from '../session_form/signup_form_container';
 import LoginFormContainer from '../session_form/login_form_container';
 import modalStyle from '../session_form/session_form_css';
+import AutocompleteContainer from '../search_autocomplete/autocomplete_container';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -86,7 +87,7 @@ class Navbar extends React.Component {
           </h1>
           <div className="navbar-search">
             <i className="fa fa-search fa-3"></i>
-
+            <AutocompleteContainer className="autocomplete-form" />
           </div>
           {options}
           <Link to='/spots/new' className="new-spot-form">Become a Host</Link>
