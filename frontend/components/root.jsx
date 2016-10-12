@@ -5,12 +5,12 @@ import App from './app';
 import HomeContainer from './home/home_container';
 import SearchContainer from './search_result/search_container';
 import SpotForm from './spot_form/spot_form_container';
+import SpotShowContainer from './spot/spot_show_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = () => {
     if (!store.getState().session.currentUser) {
       hashHistory.goBack();
-      // hashHistory.replace('/');
     }
   };
 
@@ -21,6 +21,7 @@ const Root = ({ store }) => {
           <IndexRoute component={HomeContainer} />
           <Route path="/spots" component={SearchContainer} />
           <Route path="/spots/new" component={SpotForm} onEnter={_ensureLoggedIn} />
+          <Route path="/spots/:spotId" component={SpotShowContainer} />
         </Route>
       </Router>
     </Provider>
