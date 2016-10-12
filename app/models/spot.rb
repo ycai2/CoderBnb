@@ -29,10 +29,16 @@ class Spot < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to(
-    :user,
+    :owner,
     class_name: "User",
     foreign_key: :user_id,
     primary_key: :id
+  )
+
+  has_many(
+    :bookings,
+    class_name: "Booking",
+    dependent: :destroy
   )
 
   def review_count
