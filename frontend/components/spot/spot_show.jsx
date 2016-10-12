@@ -6,7 +6,7 @@ class SpotShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestSpot(spotId);
+    this.props.requestSpot(this.props.spotId);
   }
 
   render() {

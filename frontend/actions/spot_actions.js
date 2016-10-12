@@ -13,9 +13,9 @@ export const requestSpot = (id) => ({
   id
 });
 
-export const receiveSpots = (data) => ({
+export const receiveSpots = (spots) => ({
   type: RECEIVE_SPOTS,
-  spots: data.spots
+  spots
 });
 
 export const createSpot = (spot) => ({

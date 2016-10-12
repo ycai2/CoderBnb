@@ -1,6 +1,6 @@
 import {
   REQUEST_SPOTS,
-  
+  REQUEST_SPOT,
   RECEIVE_SPOTS,
   CREATE_SPOT,
   receiveSpots,
@@ -8,7 +8,7 @@ import {
   requestSpots
 } from '../actions/spot_actions';
 import { UPDATE_BOUNDS, UPDATE_FILTERS } from '../actions/filter_actions';
-import { fetchSpots, createSpot } from '../util/spot_api_util';
+import { fetchSpots, createSpot, fetchSpot } from '../util/spot_api_util';
 
 const SpotsMiddleware = ({getState, dispatch}) => next => action => {
   const spotsSuccess = (data) => {
@@ -31,6 +31,10 @@ const SpotsMiddleware = ({getState, dispatch}) => next => action => {
     case REQUEST_SPOTS:
       const filters = getState().filters;
       fetchSpots(filters, spotsSuccess);
+      break;
+
+    case REQUEST_SPOT:
+      fetchSpot(action.id, spotSuccess);
       break;
 
     case CREATE_SPOT:

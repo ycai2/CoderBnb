@@ -7,6 +7,7 @@ import SearchContainer from './search_result/search_container';
 import SpotForm from './spot_form/spot_form_container';
 import SpotShowContainer from './spot/spot_show_container';
 
+
 const Root = ({ store }) => {
   const _ensureLoggedIn = () => {
     if (!store.getState().session.currentUser) {
