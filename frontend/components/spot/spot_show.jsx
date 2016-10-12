@@ -8,7 +8,9 @@ class SpotShow extends React.Component {
   render() {
     return (
       <div className="spot-show-page">
-        <header></header>
+        <header>
+          <img src={this.props.image_url} />
+        </header>
       </div>
     );
   }

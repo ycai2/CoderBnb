@@ -5,6 +5,7 @@ import { requestSpot } from '../../actions/spot_actions';
 const mapStateToProps = (state, ownProps) => {
   const spotId = parseInt(ownProps.params.spotId);
   const spot = state.spots[spotId];
+  debugger
   return {
     spotId,
     spot
