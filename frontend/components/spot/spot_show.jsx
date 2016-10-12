@@ -5,6 +5,10 @@ class SpotShow extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.requestSpot(spotId);
+  }
+
   render() {
     return (
       <div className="spot-show-page">

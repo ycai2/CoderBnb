@@ -1,6 +1,6 @@
 import React from 'react';
 import { DateRangePicker } from 'react-dates';
-import { hashHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 import Rheostat from 'rheostat';
 import merge from 'lodash/merge';
 
@@ -167,7 +167,7 @@ class SearchResult extends React.Component {
 const SearchResultItem = ({ spot }) => {
   return (
     <li>
-      <a href={`/#/spots/${spot.id}`}>
+      <Link to={`/spots/${spot.id}`}>
         <div className="thumbnail">
           <img src={spot.image_url} />
           <h3>${spot.price}</h3>
@@ -179,7 +179,7 @@ const SearchResultItem = ({ spot }) => {
           <span>{spot.rating} stars · </span>
           <span>{spot.review_count} review(s)</span>
         </div>
-      </a>
+      </Link>
     </li>
   );
 }

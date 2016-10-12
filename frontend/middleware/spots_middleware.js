@@ -1,5 +1,6 @@
 import {
   REQUEST_SPOTS,
+  
   RECEIVE_SPOTS,
   CREATE_SPOT,
   receiveSpots,
