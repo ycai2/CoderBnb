@@ -5,8 +5,10 @@ import { selectSpot } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   const spotId = parseInt(ownProps.params.spotId);
+  const spot = selectSpot(state.spots, spotId);
   return {
-    spotId
+    spotId,
+    spot
   }
 };
 

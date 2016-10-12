@@ -1,6 +1,12 @@
 .spot-show-page {
   header {
-    height: 400px;
-    width: 100%;
+    img {
+      height: 500px;
+    }
+
+    .header-info {
+      border-bottom: 1px solid #cdcccd;
+      height: 170px;
+    }
   }
 }
