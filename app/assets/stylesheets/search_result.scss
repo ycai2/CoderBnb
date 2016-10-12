@@ -112,15 +112,30 @@
     }
 
     .price-range {
-      flex-grow: 2;
+      flex-grow: 1;
       display: flex;
       align-items: center;
       padding: 5px 20px;
 
+      .price-slider {
+        display: flex;
+        flex-direction: column;
+        width: 84%;
+
+        .price-range-labels {
+          padding-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          padding-left: 20px;
+        }
+      }
+
+
+
       .rheostat {
         overflow: visible;
         margin-left: 20px;
-        width: 78%;
+        width: 93%;
       }
 
       .rheostat-background {
@@ -137,33 +152,33 @@
       .rheostat-handle {
         background-color: #fff;
         border: 1px solid #d8d8d8;
-        border-radius: 20%;
-        height: 24px;
+        border-radius: 50%;
+        height: 18px;
         outline: none;
         z-index: 2;
-        width: 24px;
+        width: 18px;
       }
 
-      .rheostat-handle:before,
-      .rheostat-handle:after {
-        content: '';
-        display: block;
-        position: absolute;
-        background-color: #dadfe8;
-      }
+      // .rheostat-handle:before,
+      // .rheostat-handle:after {
+      //   content: '';
+      //   display: block;
+      //   position: absolute;
+      //   background-color: #dadfe8;
+      // }
 
       .rheostat-horizontal {
-        height: 24px;
+        height: 12px;
       }
 
       .rheostat-horizontal .rheostat-background {
-        height: 15px;
+        height: 12px;
         top: 0px;
         width: 100%;
       }
 
       .rheostat-horizontal .rheostat-progress {
-        height: 13px;
+        height: 10px;
         top: 2px;
       }
 

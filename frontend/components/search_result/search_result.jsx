@@ -136,12 +136,19 @@ class SearchResult extends React.Component {
           <hr />
           <div className="price-range group">
             <span className="title price-title">Price range</span>
-            <Rheostat class="price-range-picker"
-              min={1}
-              max={1000}
-              values={[this.state.min_price, this.state.max_price]}
-              onChange={this.updatePrice}
-            />
+            <div className="price-slider">
+              <Rheostat class="price-range-picker"
+                min={1}
+                max={1000}
+                values={[this.state.min_price, this.state.max_price]}
+                onChange={this.updatePrice}
+              />
+              <div className="price-range-labels">
+                <div>{this.state.min_price}</div>
+                <div>{this.state.max_price}</div>
+              </div>
+
+            </div>
           </div>
         </div>
         <ul className="spot-list">
