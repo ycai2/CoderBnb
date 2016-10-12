@@ -1,12 +1,82 @@
 .spot-show-page {
   header {
+    border-bottom: 1px solid #cdcccd;
     img {
       height: 500px;
     }
 
     .header-info {
-      border-bottom: 1px solid #cdcccd;
+      width: 50%;
+      min-width: 500px;
+      margin: 0 auto;
       height: 170px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+
+      h1 {
+        padding: 10px 0;
+        font-size: 24px;
+      }
+
+      .rating-info {
+        display: flex;
+        font-size: 16px;
+      }
+
+      .room-info {
+        display: flex;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 10px;
+        }
+
+        i {
+          font-size: 24px;
+        }
+      }
     }
   }
+}
+
+.spot-show-body {
+  position: relative;
+
+  .booking-request {
+    position: absolute;
+    z-index: 20;
+    height: 400px;
+    width: 350px;
+    display: flex;
+    right: 5%;
+    top: -210px;
+
+    .request-price {
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0 20px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.5);
+
+      .per-night {
+        font-size: 18px;
+      }
+    }
+
+  }
+
+}
+
+.star-rating {
+  padding: 0 10px;
+  color: #ffb400;
 }

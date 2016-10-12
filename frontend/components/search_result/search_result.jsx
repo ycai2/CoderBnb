@@ -176,8 +176,8 @@ const SearchResultItem = ({ spot }) => {
         <div className="thumbnail-info">
           <h3>{spot.title}</h3>
           <span>{spot.room_type} · </span>
-          <span>{spot.guest_count} coder(s) · </span>
-          <span><StarRating stars={spot.rating} /> · </span>
+          <span>{spot.guest_count} coder(s) ·</span>
+          <span><StarRating stars={spot.rating} />· </span>
           <span>{spot.review_count} review(s)</span>
         </div>
       </Link>
