@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import Search from './search';
 import { requestSpots } from '../../actions/spot_actions';
 import { updateBounds, updateFilters } from '../../actions/filter_actions';
+import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = ({ spots, filters }) => {
   return {
-    spots,
+    spots: asArray(spots),
     filters
   };
 };

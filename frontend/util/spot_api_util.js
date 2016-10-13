@@ -11,7 +11,7 @@ export const fetchSpots = (filters, success) => {
       filters
     },
     success,
-    error: () => console.log('error'),
+    error: (e) => console.log(e),
   });
 };
 
@@ -23,6 +23,14 @@ export const createSpot = (spot, success) => {
       spot
     },
     success,
-    error: () => console.log('error'),
+    error: (e) => console.log(e),
   });
 };
+
+export const fetchSpot = (id, success) => {
+  $.ajax({
+    url: `api/spots/${id}`,
+    success,
+    error: (e) => console.log(e),
+  });
+}

@@ -215,18 +215,23 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-start;
-  width: 100%;
+  padding: 15px;
   height: 45%;
 }
 
 .search-page .spot-list li {
   width: 47%;
-  height: 100%;
+
+  a {
+    display: block;
+    height: 380px;
+  }
 
   .thumbnail {
     position: relative;
     width: 100%;
     height: 75%;
+
 
     img {
       display: block;

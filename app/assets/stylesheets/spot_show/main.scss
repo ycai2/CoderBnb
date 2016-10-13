@@ -1,0 +1,153 @@
+.spot-show-page {
+  header {
+    border-bottom: 1px solid #cdcccd;
+    img {
+      height: 500px;
+    }
+
+    .header-info {
+      width: 50%;
+      min-width: 500px;
+      margin: 0 auto;
+      height: 170px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+
+      h1 {
+        padding: 10px 0;
+        font-size: 24px;
+      }
+
+      .rating-info {
+        display: flex;
+        font-size: 16px;
+      }
+
+      .room-info {
+        display: flex;
+        padding-top: 5px;
+
+
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 10px;
+        }
+
+        i {
+          font-size: 24px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.spot-show-body {
+  position: relative;
+
+  .booking-request {
+    position: absolute;
+    z-index: 20;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    right: 5%;
+    top: -210px;
+
+    .request-wrapper {
+      background: #fff;
+      border: 1px solid #cdcccd;
+      padding: 20px;
+
+    }
+
+    .request-price {
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.5);
+
+      .per-night {
+        font-size: 18px;
+      }
+    }
+
+    .request-dates {
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 20px;
+
+      .SingleDatePicker {
+        width: 100px;
+      }
+
+      .DateInput {
+        width: 100%;
+        padding: 0;
+        font-size: 14px;
+      }
+
+      .SingleDatePicker:nth-child(2) {
+        .SingleDatePicker__picker {
+          left: -170px;
+        }
+
+        .SingleDatePicker__picker::before,
+        .SingleDatePicker__picker::after {
+          left: auto;
+          right: 20px;
+        }
+      }
+
+      select {
+        -webkit-appearance: none;
+        border: 1px solid #dbdbdb;
+        border-radius: 0;
+        background: #fff;
+        padding: 0 10px;
+      }
+    }
+
+    .price-detail > div {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      width: 100%;
+    }
+
+    .price-detail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        margin-top: 20px;
+        width: 100%;
+        background: #ff5a5f;
+        text-align: center;
+        color: #fff;
+        border-radius: 2px;
+        font-size: 16px;
+        font-weight: 700;
+        height: 40px;
+      }
+    }
+
+  }
+
+}
+
+.star-rating {
+  padding: 0 10px;
+  color: #ffb400;
+}
