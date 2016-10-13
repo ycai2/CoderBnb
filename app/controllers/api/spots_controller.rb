@@ -15,10 +15,6 @@ class Api::SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
-  def new
-
-  end
-
   def create
     @spot = Spot.new(spot_params)
     @spot.user_id = current_user.id

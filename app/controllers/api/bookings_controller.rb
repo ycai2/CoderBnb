@@ -10,7 +10,7 @@ class Api::BookingsController < ApplicationController
     if @booking.save
       render json: @booking
     else
-      render json: @booking, status: :unprocessable_entity
+      render json: @booking.errors.full_messages, status: :unprocessable_entity
     end
   end
 
