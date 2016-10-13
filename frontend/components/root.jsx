@@ -26,7 +26,7 @@ const Root = ({ store }) => {
           <Route path="/spots/new" component={SpotForm} onEnter={_ensureLoggedIn} />
           <Route path="/spots/:spotId" component={SpotShowContainer} />
           <Route path="/bookings" component={BookingIndexContainer} onEnter={_ensureLoggedIn}>
-            <Route path="/bookings/:bookingId" component={BookingShowContainer} />
+            <Route path="/:bookingId" component={BookingShowContainer} />
           </Route>
         </Route>
       </Router>
