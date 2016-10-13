@@ -1,0 +1,14 @@
+.booking-page {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  > ul {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  > h1 {
+    font-size: 20px;
+  }
+}

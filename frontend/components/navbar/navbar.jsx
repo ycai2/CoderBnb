@@ -53,7 +53,7 @@ class Navbar extends React.Component {
     return (
       <div>
         <ul className="navbar-list group">
-          <li><Link to='/'>Trips</Link></li>
+          <li><Link to='/bookings'>Trips</Link></li>
           <li className="user-label">
             <Link to='/'>{this.props.currentUser.firstName}</Link>
             <ul className="user-menu">

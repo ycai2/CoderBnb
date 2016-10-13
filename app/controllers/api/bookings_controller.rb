@@ -1,6 +1,6 @@
 class Api::BookingsController < ApplicationController
   def index
-    @bookings = Booking.by_user(current_user.id)
+    @bookings = Booking.by_user(current_user.id).includes(:spot)
   end
 
   def create
