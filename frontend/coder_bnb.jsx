@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import { fetchSpots } from './util/spot_api_util';
+import { fetchBookings } from './util/booking_api_util';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       store = configureStore(preloadedState);
     }
     window.store = store;
-    window.fetchSpots = fetchSpots;
+    window.fetchBookings = fetchBookings;
     ReactDOM.render(<Root store={store} />, root);
 });

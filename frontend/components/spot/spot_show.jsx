@@ -6,7 +6,6 @@ import { SingleDatePicker } from 'react-dates';
 class SpotShow extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = {
       start_date: null,
       end_date: null,
