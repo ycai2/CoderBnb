@@ -2,7 +2,8 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-
+    @review.booking_id = params[:booking_id]
+    
     if @review.save
       render json: @review
     else
@@ -24,7 +25,8 @@ class Api::ReviewsController < ApplicationController
       :quietness,
       :communication,
       :booking_id,
-      :overall
+      :overall,
+      :body
     )
 
   end

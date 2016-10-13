@@ -6,6 +6,7 @@ class Booking < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :spot
+  has_one :review
 
   def overlapping_requests
     Booking.where.not(id: self.id)

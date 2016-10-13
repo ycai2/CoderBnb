@@ -1,0 +1,77 @@
+.review-form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 24px;
+    padding: 20px 0;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 20px;
+    padding: 20px 0;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 10px 0;
+  }
+
+  textarea {
+    border: 1px solid #cdcccd;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .ratings {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+
+    > span {
+      display: flex;
+      width: 500px;
+      justify-content: space-between;
+      align-items: center;
+
+      .rsr__caption {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .button-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #767676;
+    font-weight: 300;
+    font-size: 16px;
+    padding: 10px 0;
+
+    a {
+      padding: 0 20px;
+    }
+
+    button {
+      font-weight: 700;
+      color: #fff;
+      background: #ff5a5f;
+      border-radius: 2px;
+      padding: 10px 50px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff7e82;
+    }
+  }
+}

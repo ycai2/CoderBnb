@@ -40,7 +40,7 @@ const BookingIndexItem = ({ booking }) => {
   } else {
     review_option = (
       <div className="review-option">
-        <StarRating stars={booking.review.rating} />
+        <StarRating stars={booking.review.overall} />
         <hr />
         <Link to={`/bookings/${booking.id}`}>Read Review</Link>
       </div>

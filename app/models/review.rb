@@ -21,5 +21,4 @@ class Review < ActiveRecord::Base
     source: :owner
   )
 
-
 end

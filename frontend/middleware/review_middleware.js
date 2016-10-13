@@ -9,11 +9,12 @@ const ReviewMiddleware = ({getState, dispatch}) => next => action => {
     dispatch(receiveReviews(data));
   };
   const reviewSuccess = (data) => {
+    hashHistory.replace('/bookings');
     console.log(data);
   };
   switch (action.type) {
     case CREATE_REVIEW:
-      createReview(action.review, reviewSuccess);
+      createReview(action.review.bookingId, action.review, reviewSuccess);
       break;
 
     default:
