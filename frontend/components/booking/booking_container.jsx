@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BookingForm from './booking_form';
+import Booking from './booking';
 import { createBooking } from '../../actions/booking_actions';
 
 const mapStateToProps = ({  }) => ({
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BookingForm);
+)(Booking);

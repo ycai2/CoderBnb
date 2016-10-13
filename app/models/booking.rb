@@ -26,4 +26,8 @@ class Booking < ActiveRecord::Base
     return unless start_date && end_date
     errors[:start_date] << "must come before end date" if start_date > end_date
   end
+
+  def self.by_user(user_id)
+    self.where("user_id = ?", user_id)
+  end
 end
