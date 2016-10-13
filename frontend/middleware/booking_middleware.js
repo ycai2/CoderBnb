@@ -1,10 +1,12 @@
 import {
   CREATE_BOOKING,
   REQUEST_BOOKINGS,
-  receiveBookings
+  REQUEST_BOOKING,
+  receiveBookings,
+  receiveBooking
 } from '../actions/booking_actions';
 import { hashHistory } from 'react-router';
-import { createBooking, fetchBookings } from '../util/booking_api_util';
+import { createBooking, fetchBookings, fetchBooking } from '../util/booking_api_util';
 
 const BookingMiddleware = ({getState, dispatch}) => next => action => {
   const bookingsSuccess = (data) => {
@@ -20,6 +22,13 @@ const BookingMiddleware = ({getState, dispatch}) => next => action => {
 
     case REQUEST_BOOKINGS:
       fetchBookings(bookingsSuccess);
+      break;
+
+    case REQUEST_BOOKING:
+      const requestSuccess = (data) => {
+        dispatch(receiveBooking(data));
+      };
+      fetchBooking(action.id, requestSuccess);
       break;
 
     default:

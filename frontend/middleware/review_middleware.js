@@ -12,7 +12,7 @@ const ReviewMiddleware = ({getState, dispatch}) => next => action => {
     console.log(data);
   };
   switch (action.type) {
-    case CREATE_BOOKING:
+    case CREATE_REVIEW:
       createReview(action.review, reviewSuccess);
       break;
 

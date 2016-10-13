@@ -14,6 +14,10 @@ class Api::BookingsController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def booking_params
     params.require(:booking).permit(
       :start_date,

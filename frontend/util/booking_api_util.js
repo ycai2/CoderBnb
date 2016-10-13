@@ -25,3 +25,15 @@ export const fetchBookings = (success) => {
     },
   });
 };
+
+export const fetchBooking = (id, success) => {
+  $.ajax({
+    url: 'api/bookings/' + id,
+    success,
+    error: (e) => {
+      e.responseJSON.forEach((error) => {
+        toastr["error"](error, "error")
+      });
+    }
+  });
+};

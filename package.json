@@ -24,11 +24,12 @@
     "moment-range": "^2.2.0",
     "react": "^15.3.2",
     "react-addons-shallow-compare": "^15.3.2",
-    "react-dates": "^3.1.1",
+    "react-dates": "^3.3.1",
     "react-dom": "^15.3.2",
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-star-rating": "^1.4.2",
     "redux": "^3.6.0",
     "rheostat": "^2.0.0",
     "webpack": "^1.13.2"

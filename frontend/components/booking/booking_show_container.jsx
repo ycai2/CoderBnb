@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
   const booking = selectSpot(state.bookings, bookingId);
   return {
     bookingId,
-    booking
+    booking,
+    currentUser
   }
 };
 

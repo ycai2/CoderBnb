@@ -2,6 +2,7 @@ export const CREATE_BOOKING = 'CREATE_BOOKING';
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const REQUEST_BOOKINGS = 'REQUEST_BOOKINGS';
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
+export const REQUEST_BOOKING = 'REQUEST_BOOKING';
 
 
 export const createBooking = (booking) => ({
@@ -21,4 +22,9 @@ export const requestBookings = () => ({
 export const receiveBookings = (bookings) => ({
   type: RECEIVE_BOOKINGS,
   bookings
+});
+
+export const requestBooking = (id) => ({
+  type: REQUEST_BOOKING,
+  id
 });
