@@ -34,7 +34,7 @@ const BookingIndexItem = ({ booking }) => {
       <div className="review-option">
         <StarRating stars={0} />
         <hr />
-        <button>Write Review</button>
+        <Link to={`/bookings/${booking.id}/reviews/new`}>Write Review</Link>
       </div>
     );
   } else {
@@ -42,7 +42,7 @@ const BookingIndexItem = ({ booking }) => {
       <div className="review-option">
         <StarRating stars={booking.review.rating} />
         <hr />
-        <button>Read Review</button>
+        <Link to={`/bookings/${booking.id}/reviews/${booking.review.id}`}>Read Review</Link>
       </div>
     );
   }
