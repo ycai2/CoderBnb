@@ -17,8 +17,7 @@ class Booking < ActiveRecord::Base
 
   def does_not_overlap_request
     unless overlapping_requests.empty?
-      errors[:base] <<
-        "Request conflicts with existing request"
+      errors[:base] << "Request conflicts with existing request"
     end
   end
 

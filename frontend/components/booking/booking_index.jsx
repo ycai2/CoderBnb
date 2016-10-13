@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class BookingIndex extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ const BookingIndexItem = ({ booking }) => {
     <li>
       <h1>{booking.start_date}</h1>
       <h1>{booking.end_date}</h1>
-      <h1>{booking.spot_title}</h1>
+      <Link to={`/spots/${booking.spot_id}`}>{booking.spot_title}</Link>
       <h1>{booking.guest_count}</h1>
     </li>
   );

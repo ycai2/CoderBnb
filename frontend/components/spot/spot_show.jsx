@@ -65,13 +65,17 @@ class SpotShow extends React.Component {
 
   createBooking(e) {
     e.preventDefault();
-    const newBooking = {
-      start_date: this.state.start_date.toString(),
-      end_date: this.state.end_date.toString(),
-      guest_count: this.state.guest_count,
-      spot_id: this.props.spot.id,
-    };
-    this.props.createBooking(newBooking);
+    if (!this.state.start_date || !this.state.end_date) {
+      toastr.error("Please enter your stay dates!", "Error");
+    } else {
+      const newBooking = {
+        start_date: this.state.start_date.toString(),
+        end_date: this.state.end_date.toString(),
+        guest_count: this.state.guest_count,
+        spot_id: this.props.spot.id,
+      };
+      this.props.createBooking(newBooking);
+    }
   }
 
   componentDidMount() {

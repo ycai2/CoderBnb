@@ -6,7 +6,11 @@ export const createBooking = (booking, success) => {
       booking
     },
     success,
-    error: (e) => console.log(e),
+    error: (e) => {
+      e.responseJSON.forEach((error) => {
+        toastr["error"](error, "error");
+      });
+    },
   });
 };
 
@@ -14,6 +18,10 @@ export const fetchBookings = (success) => {
   $.ajax({
     url: 'api/bookings',
     success,
-    error: (e) => console.log(e),
+    error: (e) => {
+      e.responseJSON.forEach((error) => {
+        toastr["error"](error, "error")
+      });
+    },
   });
 };

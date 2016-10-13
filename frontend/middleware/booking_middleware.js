@@ -3,15 +3,15 @@ import {
   REQUEST_BOOKINGS,
   receiveBookings
 } from '../actions/booking_actions';
+import { hashHistory } from 'react-router';
 import { createBooking, fetchBookings } from '../util/booking_api_util';
 
 const BookingMiddleware = ({getState, dispatch}) => next => action => {
   const bookingsSuccess = (data) => {
     dispatch(receiveBookings(data));
   };
-  const bookingSuccess = (booking) => {
-    // dispatch(receiveBooking(booking));
-    console.log('Successfully booked!');
+  const bookingSuccess = () => {
+    hashHistory.replace('/bookings');
   };
   switch (action.type) {
     case CREATE_BOOKING:
