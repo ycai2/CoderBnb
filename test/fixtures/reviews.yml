@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  booking_id: 1
+  body: MyText
+  cleanliness: 1
+  quietness: 1
+  communication: 1
+  overall: 1
+
+two:
+  user_id: 1
+  booking_id: 1
+  body: MyText
+  cleanliness: 1
+  quietness: 1
+  communication: 1
+  overall: 1

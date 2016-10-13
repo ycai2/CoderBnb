@@ -27,7 +27,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 overall_rating  | integer   | not null
-cleanness       | integer   | not null
+cleanliness     | integer   | not null
 quietness       | integer   | not null
 communication   | integer   | not null
 description     | text      |
