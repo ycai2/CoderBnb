@@ -47,10 +47,6 @@ class Spot < ActiveRecord::Base
     source: :review
   )
 
-  def review_count
-    0
-  end
-
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat])
       .where("lat > ?", bounds[:southWest][:lat])
@@ -78,5 +74,9 @@ class Spot < ActiveRecord::Base
 
   def review_count
     self.reviews.length
+  end
+
+  def rating
+    self.reviews.average("overall")
   end
 end
