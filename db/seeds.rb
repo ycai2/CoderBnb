@@ -15,48 +15,65 @@ user3 = User.create!(email: 'kennedi@hotmail.com', first_name: 'Kennedi', last_n
 
 spot1 = Spot.create!(
   title: 'Hard-core coding basement in NYC',
-  description: Faker::Hacker.say_something_smart,
+  description: "By using the online SMS microchip, developers can copy the 1080p array in our production environment. ",
   room_type: 'basement',
-  price: 3.14,
+  price: 314.15,
   guest_count: 3,
   rating: 4,
   lat: 40.725024,
   lng: -73.996792,
-  user_id: user1.id
+  user_id: user1.id,
+  image: File.open('app/assets/images/gallary/tiny-1.jpg')
 )
 
 spot2 = Spot.create!(
   title: 'Supercomputer lab near The High Line',
-  description: Faker::Hacker.say_something_smart,
+  description: "Our high-tech lab tries to quantify the HTTP protocol, so it will navigate the primary interface! You can't back up the firewall without overriding the optical JSON panel!",
   room_type: 'lab',
-  price: 200,
+  price: 256,
   guest_count: 3,
   rating: 4,
   lat: 40.748005,
   lng: -74.004786,
-  user_id: user2.id
+  user_id: user2.id,
+  image: File.open('app/assets/images/gallary/tiny-2.jpg')
 )
 
 spot3 = Spot.create!(
   title: 'Off-the-grid penthouse with top hackers',
-  description: 'In China!',
+  description: 'In New Jersey!',
   room_type: 'penthouse',
-  price: 10010,
-  guest_count: 3,
+  price: 999,
+  guest_count: 4,
   rating: 2,
-  lat: 39.909539,
-  lng: 116.373625,
-  user_id: user3.id
+  lat: 40.7310216,
+  lng: -74.031204,
+  user_id: user3.id,
+  image: File.open('app/assets/images/gallary/tiny-3.jpg')
 )
 
-guest_spot = Spot.create!(
-  title: 'My office in Airbnb',
-  description: Faker::Hacker.say_something_smart,
+spot4 = Spot.create!(
+  title: 'NYU Computer lab',
+  description: 'Our lab will synthesize the haptic ADP system, that should transmitter the SCSI hard drive to back up the neural IB panel. That should system the PCI panel!',
   room_type: 'lab',
   price: 101,
   guest_count: 3,
-  rating: 3,
-  lat: 37.772123,
-  lng: -122.405293,
-  user_id: guest.id
+  rating: 4,
+  lat: 40.7295133,
+  lng: -73.9964609,
+  user_id: user3.id,
+  image: File.open('app/assets/images/gallary/tiny-5.jpg')
+)
+
+spot5 = Spot.create!(
+  title: "NYC's most secret basement for writing bubble sort algorithms",
+  description: 'Use the open-source SDD alarm, then you can override the mobile pixel! If we index the firewall, we can get to the SCSI driver through the haptic AI bandwidth!',
+  room_type: 'basement',
+  price: 512,
+  guest_count: 2,
+  rating: 4,
+  lat: 40.7295134,
+  lng: -73.9964609,
+  user_id: user3.id,
+  image: File.open('app/assets/images/gallary/tiny-4.jpg')
 )
