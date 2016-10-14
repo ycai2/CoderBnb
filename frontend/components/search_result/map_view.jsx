@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
+import merge from 'lodash/merge';
 import { withRouter } from 'react-router';
 
 
@@ -40,7 +41,9 @@ class MapView extends React.Component {
       };
 
       this.props.updateBounds(bounds);
-      // this.props.updateFilter('bounds', bounds);
+      const newFilter = merge({}, this.props.filters);
+      delete newFilter.coords;
+      this.props.updateFilters(newFilter);
     });
     // google.maps.event.addListener(this.map, 'click', event => {
     //   const coords = _getCoordsObj(event.latLng);

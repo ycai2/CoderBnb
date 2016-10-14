@@ -14,6 +14,7 @@ const Search = ({ spots, filters, requestSpots, updateBounds, updateFilters }) =
           spots={spots}
           filters={filters}
           updateBounds={updateBounds}
+          updateFilters={updateFilters}
         />
       </div>
     );
