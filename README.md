@@ -10,33 +10,18 @@
 
 ### Spot Listing And Map
 
-  User can selectively see spots in the spot index view. There are two components in the spot index view: search result and map view. The search result lists all spots and provides different robust filters to help user choose spot to stay. The date picker implements Airbnb's official DateRangePicker component.
+  User can selectively see spots in the spot index view. There are two components in the spot index view: search result and map view. The search result lists all spots and provides different robust filters to help user choose spot to stay.
   ![result screenshot](docs/screenshots/result-1.jpg)
 
-### Notebooks
+  The date picker implements Airbnb's official DateRangePicker component.
+  ![result-dates screenshot](docs/screenshots/result-1.jpg)
 
-Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
+  
 
-The React component structure for notebooks mirrored that of notes: the `NotebookIndex` component renders a list of `CondensedNotebook`s as subcomponents, along with one `ExpandedNotebook`, kept track of by `NotebookStore.selectedNotebook()`.  
+### Bookings
 
-`NotebookIndex` render method:
-
-```javascript
-render: function () {
-  return ({this.state.notebooks.map(function (notebook) {
-    return <CondensedNotebook notebook={notebook} />
-  }
-  <ExpandedNotebook notebook={this.state.selectedNotebook} />)
-}
-```
-
-### Tags
-
-As with notebooks, tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `tagged_notes` table is the associated join table, which contains three columns: `id`, `tag_id`, and `note_id`.  
-
-Tags are maintained on the frontend in the `TagStore`.  Because creating, editing, and destroying notes can potentially affect `Tag` objects, the `NoteIndex` and the `NotebookIndex` both listen to the `TagStore`.  It was not necessary to create a `Tag` component, as tags are simply rendered as part of the individual `Note` components.  
-
-![tag screenshot](wireframes/tag-search.jpg)
+In the backend, bookings are created linking a user and a spot, referring to the action of requesting a booking. At `/spots/:spotId`, user can see all information about a spot and booking request window on right-hand-side. Using the date picker, user can pick dates to prefill other booking information, such as total price and duration of stay. Once "Request a Booking" is clicked, a booking will be created.
+![spot-show screenshot](docs/screenshots/show-1.jpg)
 
 ## Future Directions for the Project
 
