@@ -39,6 +39,10 @@
         width: 56%;
       }
 
+      .DateRangePicker__picker {
+        z-index: 5;
+      }
+
       .DateRangePickerInput {
         border: 0;
         width: 100%;
