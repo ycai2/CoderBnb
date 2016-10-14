@@ -85,6 +85,7 @@ class SpotShow extends React.Component {
   }
 
   render() {
+
     return (
       <div className="spot-show-page">
         <header>
@@ -152,7 +153,20 @@ class SpotShow extends React.Component {
               </div>
             </div>
           </div>
-          <div className="spot-show-about">
+          <div className="spot-show-reviews">
+            <ul>
+              {this.props.reviews.map((review) => {
+                return (
+                  <li key={review.id}>
+                    <h1>{review.user}</h1>
+                    <div className="review-detail">
+                      <p>{review.body}</p>
+                      <StarRating stars={review.rating} />
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>

@@ -10,3 +10,9 @@ json.lat @spot.lat
 json.lng @spot.lng
 json.owner_id @spot.user_id
 json.review_count @spot.review_count
+json.top_reviews @top_reviews do |review|
+  json.id review.id
+  json.body review.body
+  json.user review.user.first_name
+  json.rating review.overall
+end

@@ -145,6 +145,30 @@
 
   }
 
+  .spot-show-reviews {
+    width: 50%;
+    min-width: 500px;
+    margin: auto;
+
+    li {
+      display: flex;
+      flex-direction: row;
+      height: 80px;
+      border-bottom: 1px solid #cdcccd;
+      padding: 10px 0;
+
+      h1 {
+        width: 20%;
+      }
+
+      .review-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+
 }
 
 .star-rating {

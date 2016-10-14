@@ -41,6 +41,12 @@ class Spot < ActiveRecord::Base
     dependent: :destroy
   )
 
+  has_many(
+    :reviews,
+    through: :bookings,
+    source: :review
+  )
+
   def review_count
     0
   end
@@ -64,5 +70,13 @@ class Spot < ActiveRecord::Base
 
   def self.can_fit(guest_count)
     self.where("guest_count >= ?", guest_count)
+  end
+
+  def top_reviews
+    self.reviews.limit(5).order('created_at ASC').includes(:user)
+  end
+
+  def review_count
+    self.reviews.length
   end
 end

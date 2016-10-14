@@ -5,7 +5,7 @@ const SpotsReducer = (state = {}, action) => {
     case RECEIVE_SPOTS:
       return action.spots;
     case RECEIVE_SPOT:
-      return { [action.currentSpot.id] : action.currentSpot};
+      return { [action.currentSpot.id] : action.currentSpot };
 
     default:
       return state;

@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     bookingId,
     booking,
-    currentUser
+    currentUser: state.session.currentUser
   }
 };
 

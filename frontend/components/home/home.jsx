@@ -58,6 +58,44 @@ class Home extends React.Component {
               </select>
               <button onClick={this.redirectToSpots}>Search</button>
             </form>
+
+            <hr />
+
+            <div className="gallary">
+              <div className="row-high">
+                <div className="col-6 pic1">
+                </div>
+                <div className="col-3">
+                  <div className="row-mid pic2">
+                  </div>
+                  <div className="row-mid pic3">
+                  </div>
+                </div>
+                <div className="col-3">
+                  <div className="row-mid pic4">
+                  </div>
+                  <div className="row-mid pic5">
+                  </div>
+                </div>
+              </div>
+              <div className="row-high">
+                <div className="col-3">
+                  <div className="row-mid pic6">
+                  </div>
+                  <div className="row-mid pic7">
+                  </div>
+                </div>
+                <div className="col-6 pic10">
+                </div>
+                <div className="col-3">
+                  <div className="row-mid pic8">
+                  </div>
+                  <div className="row-mid pic9">
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>

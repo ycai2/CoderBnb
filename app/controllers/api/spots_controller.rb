@@ -13,6 +13,7 @@ class Api::SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @top_reviews = @spot.top_reviews
   end
 
   def create
