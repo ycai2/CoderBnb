@@ -78,7 +78,7 @@ class Navbar extends React.Component {
   }
 
   redirectToSearch() {
-    if (location.hash.split("?")[0] === "#/") {
+    if (location.hash.split("?")[0] !== "#/spots") {
       hashHistory.replace('/spots');
     }
   }
