@@ -1,4 +1,7 @@
-const defaultCallback = (data) => { console.log(data); };
+
+const defaultCallback = (data) => {
+  console.log(data);
+};
 
 export const logAllUsers = () => {
   $.ajax('api/users')
@@ -9,7 +12,11 @@ export const logAllUsers = () => {
 export const signup = (
   user,
   success = defaultCallback,
-  error = defaultCallback
+  error = (e) => {
+    e.responseJSON.forEach((error) => {
+      toastr["error"](error, "error");
+    });
+  }
 ) => {
   $.ajax({
     url: 'api/users',
