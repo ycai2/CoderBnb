@@ -92,7 +92,7 @@ class SpotShow extends React.Component {
             <h1>{this.props.spot.title}</h1>
             <div className="rating-info">
               <span><StarRating stars={this.props.spot.rating} /></span>
-              <span>{this.props.spot.review_count}review(s)</span>
+              <span>{this.props.spot.review_count} review(s)</span>
             </div>
 
             <div className="room-info">

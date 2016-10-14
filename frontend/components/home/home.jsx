@@ -59,8 +59,6 @@ class Home extends React.Component {
               <button onClick={this.redirectToSpots}>Search</button>
             </form>
 
-            <hr />
-
             <div className="gallary">
               <div className="row-high">
                 <div className="col-6 pic1">

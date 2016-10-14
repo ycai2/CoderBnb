@@ -3,6 +3,7 @@
     border-bottom: 1px solid #cdcccd;
     img {
       height: 500px;
+      object-fit: cover;
     }
 
     .header-info {
@@ -149,6 +150,10 @@
     width: 50%;
     min-width: 500px;
     margin: auto;
+
+    ul {
+      padding: 0 10px;
+    }
 
     li {
       display: flex;
