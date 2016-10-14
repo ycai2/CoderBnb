@@ -19,9 +19,9 @@ export const createSpot = (spot, success) => {
   $.ajax({
     url: 'api/spots',
     method: 'post',
-    data: {
-      spot
-    },
+    contentType: false,
+    processData: false,
+    data: spot,
     success,
     error: (e) => console.log(e),
   });

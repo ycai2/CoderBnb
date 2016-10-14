@@ -48,6 +48,7 @@ class Api::SpotsController < ApplicationController
       :lat,
       :lng,
       :guest_count,
+      :image
     )
   end
 end

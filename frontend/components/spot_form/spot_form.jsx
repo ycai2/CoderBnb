@@ -10,14 +10,19 @@ class SpotForm extends React.Component {
       state: "",
       zipcode: "",
       title: "",
+      room_type: "lab",
+      price: 0,
       description: "",
       lat: 40.7250239,
       lng: -73.996792,
       guest_count: 1,
+      imageFile: null,
+      imageUrl: null,
     }
     this.fillForm = this.fillForm.bind(this);
     this.submitSpot = this.submitSpot.bind(this);
     this.updateField = this.updateField.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   componentDidMount() {
@@ -69,18 +74,34 @@ class SpotForm extends React.Component {
 		});
   }
 
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({
+        imageFile: file,
+        imageUrl: fileReader.result
+      });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   submitSpot(e) {
     e.preventDefault();
-    const newSpot = {
-      title: this.state.title,
-      description: this.state.description,
-      room_type: "lab",
-      price: 255,
-      lat: this.state.lat,
-      lng: this.state.lng,
-      guest_count: this.state.guest_count
-    };
-    this.props.createSpot(newSpot);
+    const formData = new FormData();
+    formData.append("spot[title]", this.state.title);
+    formData.append("spot[description]", this.state.description);
+    formData.append("spot[room_type]", this.state.room_type);
+    formData.append("spot[price]", this.state.price);
+    formData.append("spot[guest_count]", this.state.guest_count);
+    formData.append("spot[lat]", this.state.lat);
+    formData.append("spot[lat]", this.state.lat);
+    formData.append("spot[lng]", this.state.lng);
+    formData.append("spot[image]", this.state.imageFile);
+
+    this.props.createSpot(formData);
   }
 
   render() {
@@ -101,6 +122,14 @@ class SpotForm extends React.Component {
         <input id="title" value={this.state.title} onChange={this.updateField('title')} />
         <label htmlFor="description">Description</label>
         <textarea id="description" value={this.state.description} onChange={this.updateField('description')}></textarea>
+        <label htmlFor="price">Price</label>
+        <input id="price" value={this.state.price} onChange={this.updateField('price')} />
+        <label htmlFor="room-type">Price</label>
+        <select id="room-type" selected={this.state.room_type} onChange={this.updateField('room_type')}>
+          <option value="lab">lab</option>
+          <option value="basement">basement</option>
+          <option value="penthouse">penthouse</option>
+        </select>
 
         <label htmlFor="guest-count">Max Guest Count</label>
         <select id="guest-count" selected={this.state.guest_count} onChange={this.updateField('guest_count')}>
@@ -111,6 +140,10 @@ class SpotForm extends React.Component {
         </select>
         <p>Caution: Too many coders may cause problems. </p>
 
+
+        <hr />
+        <input type="file" onChange={this.updateFile} />
+        <img src={this.state.imageUrl} />
         <div id="new-spot-map-container" ref="map">
         </div>
         <hr />
