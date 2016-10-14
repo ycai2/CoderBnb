@@ -79,9 +79,7 @@ class SpotShow extends React.Component {
   }
 
   componentDidMount() {
-    if (!this.props.spot || isEmpty(this.props.spot)) {
-      this.props.requestSpot(this.props.spotId);
-    }
+    this.props.requestSpot(this.props.spotId);
   }
 
   render() {
