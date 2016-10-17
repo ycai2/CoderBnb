@@ -11,7 +11,11 @@ export const fetchSpots = (filters, success) => {
       filters
     },
     success,
-    error: (e) => console.log(e),
+    error: (e) => {
+      e.responseJSON.forEach((error) => {
+        toastr["error"](error, "error");
+      });
+    },
   });
 };
 
@@ -23,7 +27,11 @@ export const createSpot = (spot, success) => {
     processData: false,
     data: spot,
     success,
-    error: (e) => console.log(e),
+    error: (e) => {
+      e.responseJSON.forEach((error) => {
+        toastr["error"](error, "error");
+      });
+    },
   });
 };
 
@@ -31,6 +39,10 @@ export const fetchSpot = (id, success) => {
   $.ajax({
     url: `api/spots/${id}`,
     success,
-    error: (e) => console.log(e),
+    error: (e) => {
+      e.responseJSON.forEach((error) => {
+        toastr["error"](error, "error");
+      });
+    },
   });
 }

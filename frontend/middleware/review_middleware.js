@@ -10,7 +10,6 @@ const ReviewMiddleware = ({getState, dispatch}) => next => action => {
   };
   const reviewSuccess = (data) => {
     hashHistory.replace('/bookings');
-    console.log(data);
   };
   switch (action.type) {
     case CREATE_REVIEW:

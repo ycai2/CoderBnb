@@ -1,6 +1,6 @@
 
 const defaultCallback = (data) => {
-  console.log(data);
+  toastr["success"]("Successfully logged in!");
 };
 
 export const logAllUsers = () => {
@@ -30,7 +30,11 @@ export const signup = (
 export const login = (
   user,
   success = defaultCallback,
-  error = defaultCallback
+  error = (e) => {
+    e.responseJSON.forEach((error) => {
+      toastr["error"](error, "error");
+    });
+  }
 ) => {
   $.ajax({
     url: 'api/session',
@@ -41,7 +45,14 @@ export const login = (
   });
 };
 
-export const logout = (success = defaultCallback, error = defaultCallback) => {
+export const logout = (
+  success = defaultCallback,
+  error = (e) => {
+    e.responseJSON.forEach((error) => {
+      toastr["error"](error, "error");
+    });
+  }
+) => {
   $.ajax({
     url: 'api/session',
     method: 'DELETE',
