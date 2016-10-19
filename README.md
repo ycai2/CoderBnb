@@ -11,8 +11,9 @@
 ### Spot Listing And Map
 
   User can selectively see spots in the spot index view. There are two components in the spot index view: search result and map view. The search result lists all spots and provides different robust filters to help user choose spot to stay.
-
+  ![result1] (docs/screenshots/result-2.png)<br>
   The date picker implements Airbnb's official DateRangePicker component.
+  ![result2] (docs/screenshots/result-1.png)<br>
 
 
 
