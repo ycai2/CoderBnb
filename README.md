@@ -1,8 +1,8 @@
 # Coderbnb
 
-[Coderbnb live][heroku]
+[Coderbnb live][live_link]
 
-[heroku]: http://coder-bnb.herokuapp.com
+[live_link]: https://www.coderbnb.info
 
   CoderBnB is a web application inspired by Airbnb built with Ruby on Rails, and React/Redux. The idea is to group coders together and code all night. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
