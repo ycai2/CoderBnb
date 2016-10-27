@@ -15,7 +15,10 @@
   The date picker implements Airbnb's official DateRangePicker component.
   ![result2] (docs/screenshots/result-1.png)<br>
 
-
+### Spot Filtering Requests
+  React components at frontend can dispatch filtering actions when user changes filters. Those filtering actions are processed at backend with Active Record and PostgreSQL queries.
+  ![code1] (docs/screenshots/code-1.png)<br>
+  ![code2] (docs/screenshots/code-2.png)<br>
 
 ### Bookings
 
