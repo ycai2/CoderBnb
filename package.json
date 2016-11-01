@@ -24,7 +24,7 @@
     "moment-range": "^2.2.0",
     "react": "^15.3.2",
     "react-addons-shallow-compare": "^15.3.2",
-    "react-dates": "^3.3.1",
+    "react-dates": "3.4.0",
     "react-dom": "^15.3.2",
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
