@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "./node_modules/.bin/webpack -w",
+    
     "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "engines": {
