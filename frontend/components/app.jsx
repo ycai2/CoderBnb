@@ -3,7 +3,6 @@ import NavbarContainer from './navbar/navbar_container';
 import Home from './home/home';
 
 const App = ({ children }) => {
-  console.log(children);
   return (
     <div id="app">
       <header>

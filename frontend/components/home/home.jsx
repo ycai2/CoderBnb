@@ -21,6 +21,7 @@ class Home extends React.Component {
   }
 
   onFocusChange(focusedInput) {
+    console.log("onfocuschange");
     this.setState({ focusedInput });
   }
 
