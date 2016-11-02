@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.prod.js --progress"
+    "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "engines": {
     "node": "6.5.0",
@@ -23,7 +23,7 @@
     "moment-range": "^2.2.0",
     "react": "^15.3.2",
     "react-addons-shallow-compare": "^15.3.2",
-    "react-dates": "^3.4.0",
+    "react-dates": ">=3.5.0",
     "react-dom": "^15.3.2",
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
